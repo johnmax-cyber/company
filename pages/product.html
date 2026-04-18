@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - Company</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="header" id="header"></header>
+  
+  <section class="section">
+    <div class="container">
+      <a href="shop.html" class="btn btn-outline" style="margin-bottom:1rem;">
+        ← Back to Shop
+      </a>
+      <div class="product-detail" id="productDetail"></div>
+    </div>
+  </section>
+  
+  <section class="section related-products">
+    <div class="container">
+      <h2 class="section-title">You Might Also Like</h2>
+      <div class="related-products-grid" id="relatedProducts"></div>
+    </div>
+  </section>
+  
+  <footer class="footer" id="footer"></footer>
+  
+  <script src="../assets/js/main.js"></script>
+  <script>
+    const relatedProducts = [
+      { id: 1, name: 'Classic Dress Shirt', price: 39.99, icon: '👔' },
+      { id: 2, name: 'Slim Fit Jeans', price: 49.99, icon: '👖' },
+      { id: 13, name: 'The Great Adventure', price: 14.99, icon: '📖' },
+      { id: 19, name: 'Bedtime Stories', price: 12.99, icon: '📖' }
+    ];
+    
+    document.getElementById('relatedProducts').innerHTML = relatedProducts.map(p => `
+      <a href="product.html?id=${p.id}" class="product-card">
+        <div class="product-image">${p.icon}</div>
+        <div class="product-info">
+          <h3 class="product-title">${p.name}</h3>
+          <p class="product-price">$${p.price.toFixed(2)}</p>
+        </div>
+      </a>
+    `).join('');
+  </script>
+</body>
+</html>

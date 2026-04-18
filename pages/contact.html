@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Company</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="header" id="header"></header>
+  
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Contact Us</h1>
+      
+      <div class="contact-grid">
+        <div>
+          <div class="contact-card">
+            <div class="contact-card-icon">📞</div>
+            <h3>Call Us</h3>
+            <p>Mon - Sat: 9AM - 6PM</p>
+            <a href="tel:+254712345678" class="btn btn-primary">📱 +254 712 345 678</a>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-card-icon">💬</div>
+            <h3>WhatsApp</h3>
+            <p>Chat with us on WhatsApp</p>
+            <a href="https://wa.me/254712345678" target="_blank" class="btn btn-whatsapp">💚 WhatsApp</a>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-card-icon">📧</div>
+            <h3>Email</h3>
+            <p>Send us an email anytime</p>
+            <a href="mailto:hello@companyshop.com" class="btn btn-outline">✉️ hello@companyshop.com</a>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-card-icon">🕐</div>
+            <h3>Business Hours</h3>
+            <div class="hours-list">
+              <p><span>Monday</span><span>9:00 AM - 6:00 PM</span></p>
+              <p><span>Tuesday</span><span>9:00 AM - 6:00 PM</span></p>
+              <p><span>Wednesday</span><span>9:00 AM - 6:00 PM</span></p>
+              <p><span>Thursday</span><span>9:00 AM - 6:00 PM</span></p>
+              <p><span>Friday</span><span>9:00 AM - 6:00 PM</span></p>
+              <p><span>Saturday</span><span>9:00 AM - 4:00 PM</span></p>
+              <p><span>Sunday</span><span>Closed</span></p>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="contact-card">
+            <div class="contact-card-icon">📍</div>
+            <h3>Visit Us</h3>
+            <p>Company Shop</p>
+            <p style="color:var(--text-light);">123 Shop Street, Nairobi</p>
+            <p style="color:var(--text-light);">Kenya</p>
+          </div>
+          
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.814402802454!2d36.8219!3d-1.2921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMTcnMy44MCJcTzMywrA1MScwNi42Ilc!5e0!3m2!1sen!2ske!4v1609459200000"
+              width="100%" 
+              height="300" 
+              style="border:0;border-radius:var(--radius);" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form-section">
+        <h2>Send Us a Message</h2>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="How can we help?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="footer" id="footer"></footer>
+  
+  <script src="../assets/js/main.js"></script>
+  <script>
+    const SUPABASE_URL = 'https://lldckqllbljogqbidbpp.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxsZGNrcWxsYmxqb2dxYmlkYnBwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY2MTM1NTYsImV4cCI6MjA2MjE4OTU1Nn0.sb_publishable_zcqkR4_8oHbjjZbhMDpl3A_uMMg6UYo';
+    const { createClient } = supabase;
+    const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      
+      const { data, error } = await supabaseClient
+        .from('messages')
+        .insert([{
+          name: name,
+          email: email,
+          message: message
+        }]);
+      
+      if (error) {
+        console.error('Error sending message:', error);
+        alert('Error sending message. Please try again.');
+        return;
+      }
+      
+      alert('Thank you for your message! We will get back to you soon.');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>

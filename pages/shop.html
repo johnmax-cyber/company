@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Company</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="header" id="header"></header>
+  
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Shop All Products</h1>
+      
+      <div class="shop-layout">
+        <aside class="sidebar">
+          <h3>Categories</h3>
+          
+          <div class="filter-group">
+            <h4>Clothes</h4>
+            <a class="filter-link active" data-category="clothes" data-subcategory="" onclick="filterByCategory('clothes', 'all')">All Clothes</a>
+            <a class="filter-link" data-category="clothes" data-subcategory="men" onclick="filterByCategory('clothes', 'men')">Men</a>
+            <a class="filter-link" data-category="clothes" data-subcategory="women" onclick="filterByCategory('clothes', 'women')">Women</a>
+            <a class="filter-link" data-category="clothes" data-subcategory="children" onclick="filterByCategory('clothes', 'children')">Children</a>
+          </div>
+          
+          <div class="filter-group">
+            <h4>Books</h4>
+            <a class="filter-link" data-category="books" data-subcategory="" onclick="filterByCategory('books', 'all')">All Books</a>
+            <a class="filter-link" data-category="books" data-subcategory="fiction" onclick="filterByCategory('books', 'fiction')">Fiction</a>
+            <a class="filter-link" data-category="books" data-subcategory="textbooks" onclick="filterByCategory('books', 'textbooks')">Textbooks</a>
+            <a class="filter-link" data-category="books" data-subcategory="childrens" onclick="filterByCategory('books', 'childrens')">Children's Books</a>
+          </div>
+        </aside>
+        
+        <main>
+          <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search products..." oninput="handleSearch(this.value)">
+            <select onchange="sortBy(this.value)">
+              <option value="">Sort by...</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+          </div>
+          
+          <div class="products-grid" id="productsGrid"></div>
+        </main>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="footer" id="footer"></footer>
+  
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

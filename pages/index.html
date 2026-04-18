@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company - Home</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="header" id="header"></header>
+  
+  <section class="hero">
+    <div class="container">
+      <h1>Company</h1>
+      <p>Your one-stop shop for stylish clothes and exciting books for the whole family - kids and adults alike!</p>
+      <a href="shop.html" class="btn btn-secondary">Shop Now</a>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Featured Categories</h2>
+      <div class="category-grid">
+        <a href="shop.html?category=clothes&subcategory=men" class="category-card men">
+          <div class="category-card-image">👔</div>
+          <div class="category-card-content">
+            <h3>Men's</h3>
+            <p class="product-price">Shop Now</p>
+          </div>
+        </a>
+        <a href="shop.html?category=clothes&subcategory=women" class="category-card women">
+          <div class="category-card-image">👗</div>
+          <div class="category-card-content">
+            <h3>Women's</h3>
+            <p class="product-price">Shop Now</p>
+          </div>
+        </a>
+        <a href="shop.html?category=clothes&subcategory=children" class="category-card children">
+          <div class="category-card-image">🧒</div>
+          <div class="category-card-content">
+            <h3>Kids</h3>
+            <p class="product-price">Shop Now</p>
+          </div>
+        </a>
+        <a href="shop.html?category=books" class="category-card books">
+          <div class="category-card-image">📚</div>
+          <div class="category-card-content">
+            <h3>Books</h3>
+            <p class="product-price">Shop Now</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Popular Products</h2>
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Why Shop With Us?</h2>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;">
+        <div class="card" style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">🚚</div>
+          <h3>Fast Shipping</h3>
+          <p style="color:var(--text-light);">Free shipping on orders over $50</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">💰</div>
+          <h3>Best Prices</h3>
+          <p style="color:var(--text-light);">Quality products at fair prices</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">🌟</div>
+          <h3>Family Friendly</h3>
+          <p style="color:var(--text-light);">For kids and adults</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">💳</div>
+          <h3>Secure Checkout</h3>
+          <p style="color:var(--text-light);">Safe and easy payments</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="footer" id="footer"></footer>
+  
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
