@@ -1,0 +1,23 @@
+{
+  "name": "company",
+  "version": "1.0.0",
+  "description": "Multi-page e-commerce website for clothes and books",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnmax-cyber/company.git"
+  },
+  "keywords": [
+    "ecommerce",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
