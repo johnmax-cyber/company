@@ -111,7 +111,7 @@ async function init() {
   // Fetch products from Supabase
   await fetchProducts();
   
-  if (path.includes('shop.html') || path === '/' || path.endsWith('/') || path.includes('index.html')) {
+  if (path === '/' || path.endsWith('/') || path.includes('index.html')) {
     renderProducts(products);
     setupFilters();
     setupSearch();
@@ -626,7 +626,7 @@ function updateCartCount() {
 
 window.addToCartQuick = function(productId) {
   // Try loading from products.json first
-  fetch('products.json')
+  fetch('/products.json')
     .then(response => response.json())
     .then(data => {
       const products = data.products;
