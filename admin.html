@@ -24,20 +24,9 @@
   
   <section class="section">
     <div class="container">
-      <div id="loginScreen" class="card" style="max-width:400px;margin:2rem auto;text-align:center;">
-        <h2>Admin Login</h2>
-        <p style="color:var(--text-light);margin-bottom:1rem;">Enter password to access admin panel</p>
-        <div class="form-group">
-          <input type="password" id="adminPassword" placeholder="Enter password">
-        </div>
-        <button class="btn btn-primary" style="width:100%;" onclick="login()">Login</button>
-        <p id="loginError" style="color:var(--secondary);margin-top:0.5rem;display:none;">Incorrect password</p>
-      </div>
-      
-      <div id="adminPanel" style="display:none;">
+      <div id="adminPanel">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
           <h1>Admin Dashboard</h1>
-          <button class="btn btn-outline" onclick="logout()">Logout</button>
         </div>
         
         <div class="tabs" style="display:flex;gap:0.5rem;margin-bottom:1.5rem;border-bottom:2px solid var(--background);">
@@ -147,11 +136,9 @@
     let editingProductId = null;
     
     async function apiCall(action, body = null) {
-      const password = sessionStorage.getItem('adminPass');
       const options = {
         method: body ? 'POST' : 'GET',
         headers: {
-          'Authorization': 'Bearer ' + password,
           'Content-Type': 'application/json'
         }
       };
@@ -177,35 +164,9 @@
         .replace(/'/g, '&#x27;');
     }
     
-    async function login() {
-      const password = document.getElementById('adminPassword').value;
-      try {
-        await apiCall('getProducts');
-        sessionStorage.setItem('adminPass', password);
-        sessionStorage.setItem('adminAuth', 'true');
-        document.getElementById('loginScreen').style.display = 'none';
-        document.getElementById('adminPanel').style.display = 'block';
-        loadAdminData();
-      } catch (e) {
-        document.getElementById('loginError').style.display = 'block';
-      }
-    }
-    
-    function logout() {
-      sessionStorage.removeItem('adminAuth');
-      sessionStorage.removeItem('adminPass');
-      document.getElementById('loginScreen').style.display = 'block';
-      document.getElementById('adminPanel').style.display = 'none';
-      document.getElementById('adminPassword').value = '';
-      document.getElementById('loginError').style.display = 'none';
-    }
-    
     window.addEventListener('DOMContentLoaded', () => {
       if (window.location.pathname.includes('admin.html')) {
-        if (sessionStorage.getItem('adminAuth') !== 'true') {
-          document.getElementById('loginScreen').style.display = 'block';
-          document.getElementById('adminPanel').style.display = 'none';
-        }
+        loadAdminData();
       }
     });
     

@@ -13,23 +13,12 @@ module.exports = async function handler(req, res) {
 
   const url = process.env.SUPABASE_URL;
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  const adminPassword = process.env.ADMIN_PASSWORD;
 
-  if (!url || !serviceKey || !adminPassword) {
+  if (!url || !serviceKey) {
     return res.status(500).json({ error: 'Server configuration error' });
   }
 
   const supabase = createClient(url, serviceKey);
-
-  const authHeader = req.headers.authorization;
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
-
-  const password = authHeader.substring(7);
-  if (password !== adminPassword) {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
 
   const action = req.query.action;
 
