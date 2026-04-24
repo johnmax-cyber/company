@@ -1,4 +1,8 @@
 -- Supabase Database Schema for Company Shop
+--
+-- NOTE: Admin operations (read orders, manage products) require Supabase service role key.
+-- Use a secure backend function or Supabase Edge Function for admin data access.
+-- Never expose the service role key in frontend code.
 
 -- Products table
 CREATE TABLE products (
@@ -70,5 +74,23 @@ CREATE POLICY "Products are viewable by everyone" ON products FOR SELECT USING (
 -- Allow insert access to orders (anon can insert)
 CREATE POLICY "Anyone can create orders" ON orders FOR INSERT WITH CHECK (true);
 
--- Allow insert access to messages
-CREATE POLICY "Anyone can send messages" ON messages FOR INSERT WITH CHECK (true);
+ -- Allow insert access to messages
+ CREATE POLICY "Anyone can send messages" ON messages FOR INSERT WITH CHECK (true);
+ 
+ -- Prevent public from reading all orders (only allow via service role / admin)
+ CREATE POLICY "Orders not publicly readable" ON orders FOR SELECT USING (false);
+ 
+ -- Prevent public from updating orders
+ CREATE POLICY "Orders not publicly updatable" ON orders FOR UPDATE USING (false);
+ 
+ -- Prevent public from deleting orders  
+ CREATE POLICY "Orders not publicly deletable" ON orders FOR DELETE USING (false);
+ 
+ -- Prevent public from deleting products
+ CREATE POLICY "Products not publicly deletable" ON products FOR DELETE USING (false);
+ 
+ -- Prevent public from inserting products
+ CREATE POLICY "Products not publicly insertable" ON products FOR INSERT WITH CHECK (false);
+ 
+ -- Prevent public from updating products
+ CREATE POLICY "Products not publicly updatable" ON products FOR UPDATE USING (false);

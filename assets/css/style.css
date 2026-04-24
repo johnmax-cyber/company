@@ -1,17 +1,20 @@
 :root {
-  --primary: #4ECDC4;
-  --secondary: #FF6B6B;
-  --background: #F7F7F7;
-  --surface: #FFFFFF;
-  --text: #333333;
-  --text-light: #666666;
-  --accent: #FFE66D;
-  --clothes: #95E1D3;
-  --books: #F38181;
-  --shadow: rgba(0, 0, 0, 0.1);
-  --radius: 8px;
-  --radius-lg: 16px;
-  --transition: 0.3s ease;
+  --primary: #1e3a5f;
+  --primary-light: #2c5282;
+  --secondary: #c53030;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text: #1a202c;
+  --text-light: #64748b;
+  --accent: #3182ce;
+  --clothes: #4a5568;
+  --books: #2d3748;
+  --shadow: rgba(30, 58, 95, 0.08);
+  --shadow-hover: rgba(30, 58, 95, 0.15);
+  --border: #e2e8f0;
+  --radius: 6px;
+  --radius-lg: 12px;
+  --transition: 0.2s ease;
 }
 
 *, *::before, *::after {
@@ -26,13 +29,14 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: var(--background);
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -79,8 +83,9 @@ button, input, select, textarea {
 }
 
 .btn-primary:hover {
-  background: #3dbdb5;
-  transform: translateY(-2px);
+  background: var(--primary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow-hover);
 }
 
 .btn-secondary {
@@ -89,7 +94,7 @@ button, input, select, textarea {
 }
 
 .btn-secondary:hover {
-  background: #ff5252;
+  background: #9b2c2c;
 }
 
 .btn-outline {
@@ -247,23 +252,26 @@ h3 { font-size: 1.25rem; }
 }
 
 .hero {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--clothes) 100%);
-  padding: 3rem 1rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  padding: 4rem 1rem;
   text-align: center;
   color: var(--surface);
 }
 
 .hero h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 
 .hero p {
   font-size: 1.125rem;
-  margin-bottom: 1.5rem;
-  max-width: 500px;
+  margin-bottom: 2rem;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0.95;
 }
 
 .section {
@@ -315,32 +323,34 @@ h3 { font-size: 1.25rem; }
 }
 
 .products-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+   gap: 1rem;
+ }
 
 .product-card {
   background: var(--surface);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 2px 8px var(--shadow);
+  box-shadow: 0 1px 3px var(--shadow);
   transition: var(--transition);
+  border: 1px solid var(--border);
 }
 
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px var(--shadow);
+  box-shadow: 0 12px 24px var(--shadow-hover);
+  border-color: var(--primary);
 }
 
 .product-image {
   width: 100%;
-  height: 150px;
-  background: linear-gradient(135deg, var(--clothes) 0%, var(--primary) 100%);
+  height: 160px;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 .product-info {
@@ -354,9 +364,9 @@ h3 { font-size: 1.25rem; }
 }
 
 .product-price {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 700;
-  color: var(--secondary);
+  color: var(--primary);
 }
 
 .product-category {
@@ -368,8 +378,21 @@ h3 { font-size: 1.25rem; }
 }
 
 .product-category.clothes {
-  background: var(--clothes);
-  color: var(--text);
+   background: var(--clothes);
+   color: var(--text);
+ }
+
+/* Why Shop With Us Section - Mobile Responsiveness */
+.why-shop-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 1rem;
+ }
+
+@media (max-width: 480px) {
+   .why-shop-grid {
+     grid-template-columns: 1fr;
+   }
 }
 
 .product-category.books {
@@ -378,22 +401,23 @@ h3 { font-size: 1.25rem; }
 }
 
 .footer {
-  background: var(--text);
-  color: var(--surface);
-  padding: 2rem 1rem;
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 3rem 1rem;
   margin-top: auto;
 }
 
 .footer-content {
   display: grid;
-  gap: 1.5rem;
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .footer-section h4 {
   margin-bottom: 1rem;
-  color: var(--primary);
+  color: #f1f5f9;
+  font-weight: 600;
 }
 
 .footer-links li {
@@ -423,7 +447,7 @@ h3 { font-size: 1.25rem; }
 .cart-item-image {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, var(--clothes) 0%, var(--primary) 100%);
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -555,9 +579,16 @@ h3 { font-size: 1.25rem; }
 }
 
 .admin-stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 1rem;
+ }
+
+/* Admin Dashboard - Add Product Form Mobile Responsiveness */
+@media (max-width: 600px) {
+   #addProductForm {
+     grid-template-columns: 1fr;
+   }
 }
 
 .stat-card {
@@ -729,14 +760,53 @@ h3 { font-size: 1.25rem; }
     grid-template-columns: repeat(4, 1fr);
   }
   
-  .related-products-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.related-products-grid {
+   grid-template-columns: repeat(4, 1fr);
+ }
+ }
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+  z-index: 9999;
+  transition: transform 0.2s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* Shop Layout - Mobile Responsiveness */
+@media (max-width: 768px) {
+   .shop-layout {
+     grid-template-columns: 1fr;
+   }
+}
 }
 
 .shop-layout {
-  display: grid;
-  gap: 1.5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .shop-layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+  }
 }
 
 .sidebar {
@@ -1014,7 +1084,7 @@ h3 { font-size: 1.25rem; }
 .cart-item-image {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, var(--clothes) 0%, var(--primary) 100%);
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
   border-radius: var(--radius);
   display: flex;
   align-items: center;

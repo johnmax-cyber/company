@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Details - Company</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <meta name="description" content="Product Details - Faith & Fashion Nairobi">
+  <meta name="theme-color" content="#1e3a5f">
+  <title>Product Details - Faith & Fashion Nairobi</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
 </head>
 <body>
   <header class="header" id="header"></header>
@@ -26,9 +30,10 @@
     </div>
   </section>
   
-  <footer class="footer" id="footer"></footer>
+<footer class="footer" id="footer"></footer>
   
-  <script src="../assets/js/main.js"></script>
+  <script src="config.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
   <script>
     const relatedProducts = [
       { id: 1, name: 'Classic Dress Shirt', price: 39.99, icon: '👔' },
@@ -42,7 +47,7 @@
         <div class="product-image">${p.icon}</div>
         <div class="product-info">
           <h3 class="product-title">${p.name}</h3>
-          <p class="product-price">$${p.price.toFixed(2)}</p>
+          <p class="product-price">KSh ${p.price.toFixed(2)}</p>
         </div>
       </a>
     `).join('');

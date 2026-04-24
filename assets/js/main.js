@@ -1,35 +1,55 @@
 // Supabase configuration
-const SUPABASE_URL = 'https://lldckqllbljogqbidbpp.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxsZGNrcWxsYmxqb2dxYmlkYnBwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY2MTM1NTYsImV4cCI6MjA2MjE4OTU1Nn0.sb_publishable_zcqkR4_8oHbjjZbhMDpl3A_uMMg6UYo';
+const SUPABASE_URL = window.__SUPABASE_URL__ || '';
+const SUPABASE_ANON_KEY = window.__SUPABASE_ANON_KEY__ || '';
+
+// Input sanitization
+function sanitizeInput(str) {
+  if (typeof str !== 'string') return '';
+  return str.replace(/[<>\"'`]/g, '').trim().slice(0, 200);
+}
+
+// XSS protection
+function escapeHtml(str) {
+  if (typeof str !== 'string') return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
 
 // Initialize Supabase client
 const { createClient } = supabase;
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+// Expose globally for admin.html
+window.supabaseClient = supabaseClient;
+
 // Fallback products (used if Supabase is not configured)
 const fallbackProducts = [
-  { id: 1, name: 'Classic Dress Shirt', price: 39.99, category: 'clothes', subcategory: 'men', description: 'Comfortable and stylish dress shirt.', icon: '👔' },
-  { id: 2, name: 'Slim Fit Jeans', price: 49.99, category: 'clothes', subcategory: 'men', description: 'Modern slim fit jeans.', icon: '👖' },
-  { id: 3, name: 'Wool Blazer', price: 89.99, category: 'clothes', subcategory: 'men', description: 'Elegant wool blazer.', icon: '🧥' },
-  { id: 4, name: 'Casual Polo', price: 29.99, category: 'clothes', subcategory: 'men', description: 'Relaxed cotton polo.', icon: '👕' },
-  { id: 5, name: 'Summer Dress', price: 59.99, category: 'clothes', subcategory: 'women', description: 'Light summer dress.', icon: '👗' },
-  { id: 6, name: 'Blouse Top', price: 34.99, category: 'clothes', subcategory: 'women', description: 'Versatile blouse.', icon: '👚' },
-  { id: 7, name: 'Maxi Skirt', price: 44.99, category: 'clothes', subcategory: 'women', description: 'Flowing maxi skirt.', icon: '👘' },
-  { id: 8, name: 'Cardigan', price: 54.99, category: 'clothes', subcategory: 'women', description: 'Cozy cardigan.', icon: '🧶' },
-  { id: 9, name: 'Kids T-Shirt', price: 19.99, category: 'clothes', subcategory: 'children', description: 'Soft cotton t-shirt.', icon: '👕' },
-  { id: 10, name: 'Kids Jeans', price: 34.99, category: 'clothes', subcategory: 'children', description: 'Durable kids jeans.', icon: '👖' },
-  { id: 11, name: 'Kids Hoodie', price: 39.99, category: 'clothes', subcategory: 'children', description: 'Warm hoodie.', icon: '🧥' },
-  { id: 12, name: 'Kids Sneakers', price: 44.99, category: 'clothes', subcategory: 'children', description: 'Comfortable sneakers.', icon: '👟' },
-  { id: 13, name: 'The Great Adventure', price: 14.99, category: 'books', subcategory: 'fiction', description: 'An exciting adventure.', icon: '📖' },
-  { id: 14, name: 'Mystery at Midnight', price: 12.99, category: 'books', subcategory: 'fiction', description: 'A thrilling mystery.', icon: '📕' },
-  { id: 15, name: 'Love in Paris', price: 9.99, category: 'books', subcategory: 'fiction', description: 'A romantic story.', icon: '💕' },
-  { id: 16, name: 'Science Textbook', price: 79.99, category: 'books', subcategory: 'textbooks', description: 'Science reference.', icon: '📚' },
-  { id: 17, name: 'Math Fundamentals', price: 59.99, category: 'books', subcategory: 'textbooks', description: 'Math guide.', icon: '➕' },
-  { id: 18, name: 'History of Art', price: 45.99, category: 'books', subcategory: 'textbooks', description: 'Art history.', icon: '🎨' },
-  { id: 19, name: 'Bedtime Stories', price: 12.99, category: 'books', subcategory: 'childrens', description: 'Bedtime stories.', icon: '📖' },
-  { id: 20, name: 'ABC Learning', price: 9.99, category: 'books', subcategory: 'childrens', description: 'Learn alphabet.', icon: '🔤' },
-  { id: 21, name: 'Coloring Fun', price: 7.99, category: 'books', subcategory: 'childrens', description: 'Coloring book.', icon: '🖍️' },
-  { id: 22, name: 'Animal Kingdom', price: 11.99, category: 'books', subcategory: 'childrens', description: 'Learn about animals.', icon: '🦁' }
+  { id: 1, name: 'Classic Dress Shirt', price: 5200, category: 'clothes', subcategory: 'men', description: 'Comfortable and stylish dress shirt.', icon: '👔' },
+  { id: 2, name: 'Slim Fit Jeans', price: 6500, category: 'clothes', subcategory: 'men', description: 'Modern slim fit jeans.', icon: '👖' },
+  { id: 3, name: 'Wool Blazer', price: 11700, category: 'clothes', subcategory: 'men', description: 'Elegant wool blazer.', icon: '🧥' },
+  { id: 4, name: 'Casual Polo', price: 3900, category: 'clothes', subcategory: 'men', description: 'Relaxed cotton polo.', icon: '👕' },
+  { id: 5, name: 'Summer Dress', price: 7800, category: 'clothes', subcategory: 'women', description: 'Light summer dress.', icon: '👗' },
+  { id: 6, name: 'Blouse Top', price: 4550, category: 'clothes', subcategory: 'women', description: 'Versatile blouse.', icon: '👚' },
+  { id: 7, name: 'Maxi Skirt', price: 5850, category: 'clothes', subcategory: 'women', description: 'Flowing maxi skirt.', icon: '👘' },
+  { id: 8, name: 'Cardigan', price: 7150, category: 'clothes', subcategory: 'women', description: 'Cozy cardigan.', icon: '🧶' },
+  { id: 9, name: 'Kids T-Shirt', price: 2600, category: 'clothes', subcategory: 'children', description: 'Soft cotton t-shirt.', icon: '👕' },
+  { id: 10, name: 'Kids Jeans', price: 4550, category: 'clothes', subcategory: 'children', description: 'Durable kids jeans.', icon: '👖' },
+  { id: 11, name: 'Kids Hoodie', price: 5200, category: 'clothes', subcategory: 'children', description: 'Warm hoodie.', icon: '🧥' },
+  { id: 12, name: 'Kids Sneakers', price: 5850, category: 'clothes', subcategory: 'children', description: 'Comfortable sneakers.', icon: '👟' },
+  { id: 13, name: 'Steps to Christ', price: 1950, category: 'books', subcategory: 'devotional', description: 'A devotional guide to Christ.', icon: '📖' },
+  { id: 14, name: 'The Great Controversy', price: 1700, category: 'books', subcategory: 'devotional', description: 'The controversy between Christ and Satan.', icon: '📕' },
+  { id: 15, name: 'The Desire of Ages', price: 1300, category: 'books', subcategory: 'devotional', description: 'Life of Christ revealed.', icon: '💕' },
+  { id: 16, name: 'Ministry of Healing', price: 10400, category: 'books', subcategory: 'study', description: 'Health and healing guide.', icon: '📚' },
+  { id: 17, name: 'Patriarchs and Prophets', price: 7800, category: 'books', subcategory: 'study', description: 'Biblical history.', icon: '➕' },
+  { id: 18, name: 'Acts of the Apostles', price: 5980, category: 'books', subcategory: 'study', description: 'Early church history.', icon: '🎨' },
+  { id: 19, name: 'Bible Stories for Children', price: 1700, category: 'books', subcategory: 'childrens', description: 'Classic Bible stories for kids.', icon: '📖' },
+  { id: 20, name: 'My Bible Friends Vol.1', price: 1300, category: 'books', subcategory: 'childrens', description: 'Learn about Bible friends.', icon: '🔤' },
+  { id: 21, name: 'Sabbath School Activity Book', price: 1040, category: 'books', subcategory: 'childrens', description: 'Fun activities for Sabbath.', icon: '🖍️' },
+  { id: 22, name: 'Gods Amazing Animals', price: 1560, category: 'books', subcategory: 'childrens', description: 'Discover Gods creatures.', icon: '🦁' }
 ];
 
 let products = [];
@@ -58,7 +78,6 @@ async function fetchProducts(showLoadingInGrid = true) {
   
   if (SUPABASE_URL.includes('YOUR_SUPABASE') || SUPABASE_URL.includes('lldckqllbljogqbidbpp')) {
     products = fallbackProducts;
-    if (grid) grid.innerHTML = '';
     return products;
   }
   
@@ -114,7 +133,7 @@ function renderNavbar() {
   const cartItemCount = cart.reduce((sum, item) => sum + item.qty, 0);
   const navbarHTML = `
     <nav class="navbar">
-      <a href="index.html" class="nav-logo">Company</a>
+      <a href="index.html" class="nav-logo">Faith & Fashion Nairobi</a>
       <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
         <span></span>
         <span></span>
@@ -125,7 +144,6 @@ function renderNavbar() {
         <li><a href="shop.html" class="nav-link">Shop</a></li>
         <li><a href="cart.html" class="nav-link">Cart</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
-        <li><a href="admin.html" class="nav-link">Admin</a></li>
       </ul>
       <div class="nav-actions">
         <a href="cart.html" class="nav-cart" aria-label="Shopping cart">
@@ -148,8 +166,8 @@ function renderFooter() {
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-section">
-          <h4>Company</h4>
-          <p>Your friendly shop for clothes and books for the whole family.</p>
+          <h4>Faith & Fashion Nairobi</h4>
+          <p>Modest fashion & SDA books, rooted in Nairobi.</p>
         </div>
         <div class="footer-section">
           <h4>Quick Links</h4>
@@ -170,14 +188,15 @@ function renderFooter() {
         <div class="footer-section">
           <h4>Contact</h4>
           <ul class="footer-links">
-            <li>📍 123 Shop Street</li>
-            <li>📞 (555) 123-4567</li>
-            <li>✉️ hello@company.com</li>
+            <li>Nairobi, Kenya</li>
+            <li><a href="tel:+254700000000">+254 700 000000</a></li>
+            <li><a href="mailto:faithandfashionnairobi@gmail.com">faithandfashionnairobi@gmail.com</a></li>
+            <li><a href="https://wa.me/254700000000" target="_blank" rel="noopener">WhatsApp Us</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Company. All rights reserved.</p>
+        <p>&copy; 2026 Faith & Fashion Nairobi. All rights reserved.</p>
       </div>
     </footer>
   `;
@@ -227,9 +246,9 @@ function renderProducts(productList) {
     <a href="product.html?id=${product.id}" class="product-card">
       <div class="product-image">${product.icon}</div>
       <div class="product-info">
-        <span class="product-category ${product.category}">${product.subcategory}</span>
-        <h3 class="product-title">${product.name}</h3>
-        <p class="product-price">$${product.price.toFixed(2)}</p>
+        <span class="product-category ${escapeHtml(product.category)}">${escapeHtml(product.subcategory)}</span>
+        <h3 class="product-title">${escapeHtml(product.name)}</h3>
+        <p class="product-price">KSh ${parseFloat(product.price).toFixed(2)}</p>
       </div>
     </a>
   `).join('');
@@ -293,13 +312,13 @@ function loadProductDetail() {
   
   const isClothes = product.category === 'clothes';
   
-  container.innerHTML = `
-    <div class="product-detail-wrapper">
-      <div class="product-detail-large">${product.icon}</div>
-      <div class="product-detail-content">
-        <span class="product-category ${product.category}">${product.subcategory}</span>
-        <h1>${product.name}</h1>
-        <p class="product-detail-price">$${product.price.toFixed(2)}</p>
+   container.innerHTML = `
+     <div class="product-detail-wrapper">
+       <div class="product-detail-large">${escapeHtml(product.icon)}</div>
+       <div class="product-detail-content">
+         <span class="product-category ${escapeHtml(product.category)}">${escapeHtml(product.subcategory)}</span>
+         <h1>${escapeHtml(product.name)}</h1>
+         <p class="product-detail-price">KSh ${product.price.toFixed(2)}</p>
         <p class="product-detail-description">
           ${isClothes 
             ? 'Comfortable and stylish clothing perfect for everyday wear. Made with quality materials for lasting comfort and ease.' 
@@ -384,7 +403,7 @@ function renderCart() {
           <div class="cart-item-image">${item.icon}</div>
           <div class="cart-item-details">
             <h3>${item.name}</h3>
-            <p class="price">$${(item.price * item.qty).toFixed(2)}</p>
+            <p class="price">KSh ${(item.price * item.qty).toFixed(2)}</p>
             <div class="cart-item-qty">
               <button onclick="updateQuantity(${index}, -1)">-</button>
               <span>${item.qty}</span>
@@ -402,7 +421,7 @@ function renderCart() {
     <div class="cart-summary">
       <div class="cart-subtotal">
         <span>Subtotal:</span>
-        <span>$${total.toFixed(2)}</span>
+        <span>KSh ${total.toFixed(2)}</span>
       </div>
       <div class="checkout-form" id="checkoutForm">
         <h3 style="margin-bottom:1rem;">Complete Your Order</h3>
@@ -424,11 +443,17 @@ function renderCart() {
 }
 
 async function submitOrder(paymentMethod) {
-  const name = document.getElementById('customerName').value.trim();
-  const phone = document.getElementById('customerPhone').value.trim();
+  const name = sanitizeInput(document.getElementById('customerName').value);
+  const phone = sanitizeInput(document.getElementById('customerPhone').value);
   
   if (!name || !phone) {
     alert('Please enter your name and phone number.');
+    return;
+  }
+  
+  const phoneRegex = /^[+\d\s\-()]{7,20}$/;
+  if (!phoneRegex.test(phone)) {
+    alert('Please enter a valid phone number (e.g. +254712345678).');
     return;
   }
   
@@ -531,7 +556,7 @@ function renderAdmin() {
         <div class="stat-label">Customers</div>
       </div>
       <div class="stat-card">
-        <div class="stat-value">$${totalRevenue.toFixed(2)}</div>
+        <div class="stat-value">KSh ${totalRevenue.toFixed(2)}</div>
         <div class="stat-label">Revenue</div>
       </div>
     `;
@@ -556,7 +581,7 @@ function renderAdmin() {
               <td>${p.id}</td>
               <td>${p.icon} ${p.name}</td>
               <td>${p.category} - ${p.subcategory}</td>
-              <td>$${p.price.toFixed(2)}</td>
+              <td>KSh ${p.price.toFixed(2)}</td>
               <td>
                 <button class="btn btn-outline" style="padding:0.25rem 0.5rem;font-size:0.875rem;">Edit</button>
               </td>
@@ -569,3 +594,15 @@ function renderAdmin() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// Floating WhatsApp button - injected on every page
+document.addEventListener('DOMContentLoaded', function() {
+  const wa = document.createElement('a');
+  wa.href = "https://wa.me/254712345678?text=Hello%2C%20I%27m%20interested%20in%20your%20products";
+  wa.className = 'whatsapp-float';
+  wa.target = '_blank';
+  wa.rel = 'noopener';
+  wa.setAttribute('aria-label', 'Chat on WhatsApp');
+  wa.textContent = '💬';
+  document.body.appendChild(wa);
+});

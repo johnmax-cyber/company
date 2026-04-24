@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop - Company</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <meta name="description" content="Shop Faith & Fashion Nairobi - Browse modest clothing and SDA books for the whole family.">
+  <meta name="theme-color" content="#1e3a5f">
+  <title>Shop - Faith & Fashion Nairobi</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
 </head>
 <body>
   <header class="header" id="header"></header>
@@ -29,9 +33,9 @@
           <div class="filter-group">
             <h4>Books</h4>
             <a class="filter-link" data-category="books" data-subcategory="" onclick="filterByCategory('books', 'all')">All Books</a>
-            <a class="filter-link" data-category="books" data-subcategory="fiction" onclick="filterByCategory('books', 'fiction')">Fiction</a>
-            <a class="filter-link" data-category="books" data-subcategory="textbooks" onclick="filterByCategory('books', 'textbooks')">Textbooks</a>
-            <a class="filter-link" data-category="books" data-subcategory="childrens" onclick="filterByCategory('books', 'childrens')">Children's Books</a>
+            <a class="filter-link" data-category="books" data-subcategory="devotional" onclick="filterByCategory('books', 'devotional')">Devotional</a>
+            <a class="filter-link" data-category="books" data-subcategory="study" onclick="filterByCategory('books', 'study')">Study Guides</a>
+            <a class="filter-link" data-category="books" data-subcategory="childrens" onclick="filterByCategory('books', 'childrens')">Children's</a>
           </div>
         </aside>
         
@@ -54,6 +58,7 @@
   
   <footer class="footer" id="footer"></footer>
   
-  <script src="../assets/js/main.js"></script>
+   <script src="config.js" defer></script>
+   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Company</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <meta name="description" content="Admin Dashboard - Faith & Fashion Nairobi">
+  <meta name="theme-color" content="#1e3a5f">
+  <title>Admin - Faith & Fashion Nairobi</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
 </head>
 <body>
   <header class="header" id="header"></header>
@@ -36,7 +40,7 @@
         <div id="productsTab">
           <div class="card" style="margin-bottom:1.5rem;">
             <h3>Add New Product</h3>
-            <form id="addProductForm" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem;">
+            <form id="addProductForm" style="gap:1rem;margin-top:1rem;">
               <div class="form-group">
                 <label>Product Name</label>
                 <input type="text" id="newProductName" required placeholder="Enter product name">
@@ -127,178 +131,182 @@
     </div>
   </section>
   
-  <footer class="footer" id="footer"></footer>
-  
-  <script src="../assets/js/main.js"></script>
-  <script>
-    const ADMIN_PASSWORD = 'admin123';
-    let products = [];
-    let orders = [];
-    let editingProductId = null;
-    
-    const SUPABASE_URL = 'https://lldckqllbljogqbidbpp.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxsZGNrcWxsYmxqb2dxYmlkYnBwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY2MTM1NTYsImV4cCI6MjA2MjE4OTU1Nn0.sb_publishable_zcqkR4_8oHbjjZbhMDpl3A_uMMg6UYo';
-    const { createClient } = supabase;
-    const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    
-    function login() {
-      const password = document.getElementById('adminPassword').value;
-      if (password === ADMIN_PASSWORD) {
-        document.getElementById('loginScreen').style.display = 'none';
-        document.getElementById('adminPanel').style.display = 'block';
-        loadAdminData();
-      } else {
-        document.getElementById('loginError').style.display = 'block';
-      }
-    }
-    
-    function logout() {
-      document.getElementById('loginScreen').style.display = 'block';
-      document.getElementById('adminPanel').style.display = 'none';
-      document.getElementById('adminPassword').value = '';
-      document.getElementById('loginError').style.display = 'none';
-    }
-    
-    function showTab(tab) {
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
-      document.getElementById('productsTab').style.display = tab === 'products' ? 'block' : 'none';
-      document.getElementById('ordersTab').style.display = tab === 'orders' ? 'block' : 'none';
-    }
-    
-    async function loadAdminData() {
-      await Promise.all([loadProducts(), loadOrders()]);
-    }
-    
-    async function loadProducts() {
-      const { data, error } = await supabaseClient.from('products').select('*').order('id');
-      if (error) {
-        console.error('Error loading products:', error);
-        return;
-      }
-      products = data || [];
-      renderProductsTable();
-    }
-    
-    function renderProductsTable() {
-      const tbody = document.querySelector('#productsTable tbody');
-      tbody.innerHTML = products.map(p => `
-        <tr>
-          <td>${p.id}</td>
-          <td>${p.icon} ${p.name}</td>
-          <td>$${parseFloat(p.price).toFixed(2)}</td>
-          <td>${p.category} - ${p.subcategory}</td>
-          <td>${p.in_stock ? '✓' : '✗'}</td>
-          <td>
-            <button class="btn btn-outline" style="padding:0.25rem 0.5rem;font-size:0.75rem;margin-right:0.25rem;" onclick="editProduct(${p.id})">Edit</button>
-            <button class="btn btn-secondary" style="padding:0.25rem 0.5rem;font-size:0.75rem;" onclick="deleteProduct(${p.id})">Delete</button>
-          </td>
-        </tr>
-      `).join('');
-    }
-    
-    async function editProduct(id) {
-      const product = products.find(p => p.id === id);
-      if (!product) return;
-      editingProductId = id;
-      document.getElementById('newProductName').value = product.name;
-      document.getElementById('newProductPrice').value = product.price;
-      document.getElementById('newProductCategory').value = product.category;
-      document.getElementById('newProductSubcategory').value = product.subcategory || 'men';
-      document.getElementById('newProductDescription').value = product.description || '';
-      document.getElementById('newProductIcon').value = product.icon || '👕';
-      document.getElementById('newProductInStock').value = product.in_stock ? 'true' : 'false';
-    }
-    
-    async function deleteProduct(id) {
-      if (!confirm('Are you sure you want to delete this product?')) return;
-      const { error } = await supabaseClient.from('products').delete().eq('id', id);
-      if (error) {
-        console.error('Error deleting product:', error);
-        alert('Error deleting product');
-        return;
-      }
-      loadProducts();
-    }
-    
-    document.getElementById('addProductForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const name = document.getElementById('newProductName').value;
-      const price = parseFloat(document.getElementById('newProductPrice').value);
-      const category = document.getElementById('newProductCategory').value;
-      const subcategory = document.getElementById('newProductSubcategory').value;
-      const description = document.getElementById('newProductDescription').value;
-      const icon = document.getElementById('newProductIcon').value;
-      const in_stock = document.getElementById('newProductInStock').value === 'true';
+<script src="config.js" defer></script>
+   <script src="assets/js/main.js" defer></script>
+   <script>
+      let products = [];
+      let orders = [];
+      let editingProductId = null;
       
-      if (editingProductId) {
-        const { error } = await supabaseClient.from('products').update({
-          name, price, category, subcategory, description, icon, in_stock
-        }).eq('id', editingProductId);
-        
-        if (error) {
-          console.error('Error updating product:', error);
-          alert('Error updating product');
-          return;
+      async function apiCall(action, body = null) {
+        const password = sessionStorage.getItem('adminPass');
+        const options = {
+          method: body ? 'POST' : 'GET',
+          headers: {
+            'Authorization': 'Bearer ' + password,
+            'Content-Type': 'application/json'
+          }
+        };
+        if (body) {
+          options.body = JSON.stringify(body);
         }
-        editingProductId = null;
-      } else {
-        const { error } = await supabaseClient.from('products').insert([{
-          name, price, category, subcategory, description, icon, in_stock
-        }]);
-        
-        if (error) {
-          console.error('Error adding product:', error);
-          alert('Error adding product');
-          return;
+        const response = await fetch('/api/admin?action=' + action, options);
+        const data = await response.json();
+        if (data.error) {
+          throw new Error(data.error);
+        }
+        return data;
+      }
+      
+      // XSS protection
+      function escapeHtml(str) {
+        if (typeof str !== 'string') return '';
+        return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#x27;');
+      }
+      
+      async function login() {
+        const password = document.getElementById('adminPassword').value;
+        try {
+          await apiCall('getProducts');
+          sessionStorage.setItem('adminPass', password);
+          sessionStorage.setItem('adminAuth', 'true');
+          document.getElementById('loginScreen').style.display = 'none';
+          document.getElementById('adminPanel').style.display = 'block';
+          loadAdminData();
+        } catch (e) {
+          document.getElementById('loginError').style.display = 'block';
         }
       }
       
-      e.target.reset();
-      loadProducts();
-    });
-    
-    async function loadOrders() {
-      const { data, error } = await supabaseClient.from('orders').select('*').order('id', { ascending: false });
-      if (error) {
-        console.error('Error loading orders:', error);
-        return;
+      function logout() {
+        sessionStorage.removeItem('adminAuth');
+        sessionStorage.removeItem('adminPass');
+        document.getElementById('loginScreen').style.display = 'block';
+        document.getElementById('adminPanel').style.display = 'none';
+        document.getElementById('adminPassword').value = '';
+        document.getElementById('loginError').style.display = 'none';
       }
-      orders = data || [];
-      renderOrdersTable();
-    }
-    
-    function renderOrdersTable() {
-      const tbody = document.querySelector('#ordersTable tbody');
-      tbody.innerHTML = orders.map(o => `
-        <tr>
-          <td>#${o.id}</td>
-          <td>${o.customer_name}</td>
-          <td>${o.customer_phone}</td>
-          <td>$${parseFloat(o.total).toFixed(2)}</td>
-          <td>${o.payment_method === 'mpesa' ? '📱 M-Pesa' : '💵 Cash'}</td>
-          <td>
-            <select onchange="updateOrderStatus(${o.id}, this.value)" style="padding:0.25rem;border-radius:var(--radius);">
-              <option value="pending" ${o.status === 'pending' ? 'selected' : ''}>Pending</option>
-              <option value="confirmed" ${o.status === 'confirmed' ? 'selected' : ''}>Confirmed</option>
-              <option value="delivered" ${o.status === 'delivered' ? 'selected' : ''}>Delivered</option>
-            </select>
-          </td>
-          <td>${new Date(o.created_at).toLocaleDateString()}</td>
-        </tr>
-      `).join('');
-    }
-    
-    async function updateOrderStatus(id, status) {
-      const { error } = await supabaseClient.from('orders').update({ status }).eq('id', id);
-      if (error) {
-        console.error('Error updating order:', error);
-        alert('Error updating order status');
-        return;
+      
+      window.addEventListener('DOMContentLoaded', () => {
+        if (window.location.pathname.includes('admin.html')) {
+          if (sessionStorage.getItem('adminAuth') !== 'true') {
+            document.getElementById('loginScreen').style.display = 'block';
+            document.getElementById('adminPanel').style.display = 'none';
+          }
+        }
+      });
+      
+      function showTab(tab) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+        document.getElementById('productsTab').style.display = tab === 'products' ? 'block' : 'none';
+        document.getElementById('ordersTab').style.display = tab === 'orders' ? 'block' : 'none';
       }
-      const order = orders.find(o => o.id === id);
-      if (order) order.status = status;
-    }
-  </script>
+      
+      async function loadAdminData() {
+        await Promise.all([loadProducts(), loadOrders()]);
+      }
+      
+      async function loadProducts() {
+        const response = await apiCall('getProducts');
+        products = response.data || [];
+        renderProductsTable();
+      }
+      
+      function renderProductsTable() {
+        const tbody = document.querySelector('#productsTable tbody');
+        tbody.innerHTML = products.map(p => `
+          <tr>
+            <td>${p.id}</td>
+            <td>${escapeHtml(p.icon)} ${escapeHtml(p.name)}</td>
+            <td>${escapeHtml(p.category)} - ${escapeHtml(p.subcategory)}</td>
+            <td>KSh ${parseFloat(p.price).toFixed(2)}</td>
+            <td>${p.in_stock ? '✓' : '✗'}</td>
+            <td>
+              <button class="btn btn-outline" style="padding:0.25rem 0.5rem;font-size:0.75rem;margin-right:0.25rem;" onclick="editProduct(${p.id})">Edit</button>
+              <button class="btn btn-secondary" style="padding:0.25rem 0.5rem;font-size:0.75rem;" onclick="deleteProduct(${p.id})">Delete</button>
+            </td>
+          </tr>
+        `).join('');
+      }
+      
+      function editProduct(id) {
+        const product = products.find(p => p.id === id);
+        if (!product) return;
+        editingProductId = id;
+        document.getElementById('newProductName').value = product.name;
+        document.getElementById('newProductPrice').value = product.price;
+        document.getElementById('newProductCategory').value = product.category;
+        document.getElementById('newProductSubcategory').value = product.subcategory || 'men';
+        document.getElementById('newProductDescription').value = product.description || '';
+        document.getElementById('newProductIcon').value = product.icon || '👕';
+        document.getElementById('newProductInStock').value = product.in_stock ? 'true' : 'false';
+      }
+      
+      async function deleteProduct(id) {
+        if (!confirm('Are you sure you want to delete this product?')) return;
+        await apiCall('deleteProduct', { id });
+        loadProducts();
+      }
+      
+      document.getElementById('addProductForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('newProductName').value;
+        const price = parseFloat(document.getElementById('newProductPrice').value);
+        const category = document.getElementById('newProductCategory').value;
+        const subcategory = document.getElementById('newProductSubcategory').value;
+        const description = document.getElementById('newProductDescription').value;
+        const icon = document.getElementById('newProductIcon').value;
+        const in_stock = document.getElementById('newProductInStock').value === 'true';
+        
+        if (editingProductId) {
+          await apiCall('updateProduct', { id: editingProductId, name, price, category, subcategory, description, icon, in_stock });
+          editingProductId = null;
+        } else {
+          await apiCall('addProduct', { name, price, category, subcategory, description, icon, in_stock });
+        }
+        
+        e.target.reset();
+        loadProducts();
+      });
+      
+      async function loadOrders() {
+        const response = await apiCall('getOrders');
+        orders = response.data || [];
+        renderOrdersTable();
+      }
+      
+      function renderOrdersTable() {
+        const tbody = document.querySelector('#ordersTable tbody');
+        tbody.innerHTML = orders.map(o => `
+          <tr>
+            <td>#${o.id}</td>
+            <td>${escapeHtml(o.customer_name)}</td>
+            <td>${escapeHtml(o.customer_phone)}</td>
+            <td>KSh ${parseFloat(o.total).toFixed(2)}</td>
+            <td>${o.payment_method === 'mpesa' ? '📱 M-Pesa' : '💵 Cash'}</td>
+            <td>
+              <select onchange="updateOrderStatus(${o.id}, this.value)" style="padding:0.25rem;border-radius:var(--radius);">
+                <option value="pending" ${o.status === 'pending' ? 'selected' : ''}>Pending</option>
+                <option value="confirmed" ${o.status === 'confirmed' ? 'selected' : ''}>Confirmed</option>
+                <option value="delivered" ${o.status === 'delivered' ? 'selected' : ''}>Delivered</option>
+              </select>
+            </td>
+            <td>${new Date(o.created_at).toLocaleDateString()}</td>
+          </tr>
+        `).join('');
+      }
+      
+      async function updateOrderStatus(id, status) {
+        await apiCall('updateOrderStatus', { id, status });
+        const order = orders.find(o => o.id === id);
+        if (order) order.status = status;
+      }
+   </script>
 </body>
 </html>
