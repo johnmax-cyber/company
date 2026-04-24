@@ -13,11 +13,32 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <script
   src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.min.js"
-  integrity="sha256-REPLACE_with_ACTUAL_HASH"
   crossorigin="anonymous"
   defer>
 </script>
   <script src="config.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+</head>
+<body class="cart-page">
+  <header class="header" id="header"></header>
+  
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Your Cart</h1>
+      
+      <div id="cartItems">
+        <div class="cart-empty">
+          <div class="cart-empty-icon">🛒</div>
+          <h2>Your cart is empty!</h2>
+          <p>Looks like you haven't added anything yet. Start shopping to fill up your cart!</p>
+          <a href="shop.html" class="btn btn-primary">Start Shopping</a>
+        </div>
+      </div>
+      
+      <div id="cartTotal"></div>
+    </div>
+  </section>
+  
+  <footer class="footer" id="footer"></footer>
 </body>
 </html>

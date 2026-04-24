@@ -14,11 +14,133 @@
   <link rel="preload" href="assets/js/main.js" as="script">
   <script
   src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.min.js"
-  integrity="sha256-REPLACE_with_ACTUAL_HASH"
   crossorigin="anonymous"
   defer>
 </script>
   <script src="config.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <header class="header" id="header"></header>
+  
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Faith & Fashion Nairobi</h1>
+        <p>Modest wear & SDA books for the whole family — delivered in Nairobi.</p>
+        <ul class="hero-bullets">
+          <li>✅ Delivery within 24–48hrs (Nairobi)</li>
+          <li>✅ Pay via M-Pesa or Cash on Delivery</li>
+          <li>✅ Easy returns within 7 days</li>
+        </ul>
+        <div class="hero-ctas">
+          <a href="shop.html" class="btn btn-secondary">Shop Clothing</a>
+          <a href="shop.html?category=books" class="btn btn-outline-white">Shop Books</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Featured Categories</h2>
+      <div class="category-grid">
+        <a href="shop.html?category=clothes&subcategory=men" class="category-card men">
+          <div class="category-card-image">👔</div>
+          <div class="category-card-content">
+            <h3>Men's</h3>
+            <p class="product-price">Shop Now</p>
+          </div>
+        </a>
+        <a href="shop.html?category=clothes&subcategory=women" class="category-card women">
+          <div class="category-card-image">👗</div>
+          <div class="category-card-content">
+            <h3>Women's</h3>
+            <p class="product-price">Shop Now</p>
+          </div>
+        </a>
+        <a href="shop.html?category=clothes&subcategory=children" class="category-card children">
+          <div class="category-card-image">🧒</div>
+          <div class="category-card-content">
+            <h3>Kids</h3>
+            <p class="product-price">Shop Now</p>
+          </div>
+        </a>
+        <a href="shop.html?category=books" class="category-card books">
+          <div class="category-card-image">📚</div>
+          <div class="category-card-content">
+            <h3>Books</h3>
+            <p class="product-price">Shop Now</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Popular Products</h2>
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Why Shop With Us?</h2>
+      <div class="why-shop-grid">
+        <div class="card" style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">🚚</div>
+          <h3>Nairobi Delivery</h3>
+          <p style="color:var(--text-light);">Nairobi delivery available</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">💰</div>
+          <h3>Best Prices</h3>
+          <p style="color:var(--text-light);">Quality products at fair prices</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">🌟</div>
+          <h3>Faith-Based</h3>
+          <p style="color:var(--text-light);">Modest clothing & SDA books</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">💳</div>
+          <h3>Secure Checkout</h3>
+          <p style="color:var(--text-light);">Safe and easy payments</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section delivery-section">
+    <div class="container">
+      <h2 class="section-title">How Delivery Works</h2>
+      <div class="delivery-steps">
+        <div class="delivery-step">
+          <div class="step-icon">🛒</div>
+          <h3>1. Shop Online</h3>
+          <p>Browse our catalog and add items to your cart</p>
+        </div>
+        <div class="delivery-step">
+          <div class="step-icon">📱</div>
+          <h3>2. Pay via M-Pesa</h3>
+          <p>Secure M-Pesa or Cash on Delivery payment</p>
+        </div>
+        <div class="delivery-step">
+          <div class="step-icon">🚚</div>
+          <h3>3. We Deliver</h3>
+          <p>24–48hr delivery across Nairobi</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:1.5rem;">
+        <a href="https://wa.me/254712345678?text=Hello%2C%20I%20need%20help%20with%20an%20order"
+           target="_blank" class="btn btn-whatsapp">
+          💬 Need Help? Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="footer" id="footer"></footer>
 </body>
 </html>
