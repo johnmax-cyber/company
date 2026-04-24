@@ -5,60 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Shop Faith & Fashion Nairobi - Browse modest clothing and SDA books for the whole family.">
   <meta name="theme-color" content="#1e3a5f">
+  <meta http-equiv="Content-Security-Policy"
+  content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co; img-src 'self' data: https:;">
   <title>Shop - Faith & Fashion Nairobi</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-</head>
-<body>
-  <header class="header" id="header"></header>
-  
-  <section class="section">
-    <div class="container">
-      <h1 class="section-title">Shop All Products</h1>
-      
-      <div class="shop-layout">
-        <aside class="sidebar">
-          <h3>Categories</h3>
-          
-          <div class="filter-group">
-            <h4>Clothes</h4>
-            <a class="filter-link active" data-category="clothes" data-subcategory="" onclick="filterByCategory('clothes', 'all')">All Clothes</a>
-            <a class="filter-link" data-category="clothes" data-subcategory="men" onclick="filterByCategory('clothes', 'men')">Men</a>
-            <a class="filter-link" data-category="clothes" data-subcategory="women" onclick="filterByCategory('clothes', 'women')">Women</a>
-            <a class="filter-link" data-category="clothes" data-subcategory="children" onclick="filterByCategory('clothes', 'children')">Children</a>
-          </div>
-          
-          <div class="filter-group">
-            <h4>Books</h4>
-            <a class="filter-link" data-category="books" data-subcategory="" onclick="filterByCategory('books', 'all')">All Books</a>
-            <a class="filter-link" data-category="books" data-subcategory="devotional" onclick="filterByCategory('books', 'devotional')">Devotional</a>
-            <a class="filter-link" data-category="books" data-subcategory="study" onclick="filterByCategory('books', 'study')">Study Guides</a>
-            <a class="filter-link" data-category="books" data-subcategory="childrens" onclick="filterByCategory('books', 'childrens')">Children's</a>
-          </div>
-        </aside>
-        
-        <main>
-          <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search products..." oninput="handleSearch(this.value)">
-            <select onchange="sortBy(this.value)">
-              <option value="">Sort by...</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="name">Name: A to Z</option>
-            </select>
-          </div>
-          
-          <div class="products-grid" id="productsGrid"></div>
-        </main>
-      </div>
-    </div>
-  </section>
-  
-  <footer class="footer" id="footer"></footer>
-  
-   <script src="config.js" defer></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.min.js"
+  integrity="sha256-REPLACE_with_ACTUAL_HASH"
+  crossorigin="anonymous"
+  defer>
+</script>
+  <script src="config.js" defer></script>
    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

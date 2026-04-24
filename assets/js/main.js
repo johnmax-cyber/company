@@ -145,6 +145,16 @@ function renderNavbar() {
         <li><a href="cart.html" class="nav-link">Cart</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
+      <div class="nav-search">
+        <input
+          type="text"
+          id="globalSearch"
+          placeholder="Search products..."
+          onkeydown="if(event.key==='Enter'){
+            window.location.href='shop.html?search='+encodeURIComponent(this.value)
+          }"
+        >
+      </div>
       <div class="nav-actions">
         <a href="cart.html" class="nav-cart" aria-label="Shopping cart">
           <span class="cart-icon">🛒</span>
@@ -163,42 +173,51 @@ function renderNavbar() {
 
 function renderFooter() {
   const footerHTML = `
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Faith & Fashion Nairobi</h4>
-          <p>Modest fashion & SDA books, rooted in Nairobi.</p>
-        </div>
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Categories</h4>
-          <ul class="footer-links">
-            <li><a href="shop.html">Clothes</a></li>
-            <li><a href="shop.html">Books</a></li>
-            <li><a href="shop.html">Kids</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Contact</h4>
-          <ul class="footer-links">
-            <li>Nairobi, Kenya</li>
-            <li><a href="tel:+254700000000">+254 700 000000</a></li>
-            <li><a href="mailto:faithandfashionnairobi@gmail.com">faithandfashionnairobi@gmail.com</a></li>
-            <li><a href="https://wa.me/254700000000" target="_blank" rel="noopener">WhatsApp Us</a></li>
-          </ul>
-        </div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Faith & Fashion Nairobi</h4>
+        <p style="color:var(--text-light);font-size:0.9rem;margin-top:0.5rem;">
+          Modest clothing & SDA books for the whole family. Delivered in Nairobi.
+        </p>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Faith & Fashion Nairobi. All rights reserved.</p>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html?category=clothes&subcategory=men">Men's</a></li>
+          <li><a href="shop.html?category=clothes&subcategory=women">Women's</a></li>
+          <li><a href="shop.html?category=clothes&subcategory=children">Kids</a></li>
+          <li><a href="shop.html?category=books">SDA Books</a></li>
+        </ul>
       </div>
-    </footer>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html#delivery">Delivery Policy</a></li>
+          <li><a href="contact.html#returns">Returns Policy</a></li>
+          <li><a href="contact.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+254712345678">📞 +254 712 345 678</a></li>
+          <li><a href="mailto:faithandfashionnairobi@gmail.com">✉️ Email Us</a></li>
+          <li><a href="https://wa.me/254712345678" target="_blank">💬 WhatsApp</a></li>
+        </ul>
+        <p style="font-size:0.85rem;color:var(--text-light);margin-top:0.75rem;">
+          Mon–Sat: 9AM–6PM
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Faith & Fashion Nairobi. All rights reserved.</p>
+      <p style="font-size:0.8rem;color:var(--text-light);">Pay via M-Pesa • Cash on Delivery • Secure Checkout</p>
+    </div>
+  </div>
+</footer>
   `;
   
   const footer = document.getElementById('footer');
@@ -252,6 +271,12 @@ function renderProducts(productList) {
       </div>
     </a>
   `).join('');
+  
+  const count = document.getElementById('resultCount');
+  if (count) {
+    const total = productList.length;
+    count.textContent = `Showing ${total} product${total !== 1 ? 's' : ''}`;
+  }
 }
 
 function setupFilters() {
@@ -307,6 +332,8 @@ function loadProductDetail() {
   const id = parseInt(params.get('id')) || 1;
   const product = products.find(p => p.id === id) || products[0];
   
+  injectProductSchema(product);
+  
   const container = document.getElementById('productDetail');
   if (!container) return;
   
@@ -319,35 +346,66 @@ function loadProductDetail() {
          <span class="product-category ${escapeHtml(product.category)}">${escapeHtml(product.subcategory)}</span>
          <h1>${escapeHtml(product.name)}</h1>
          <p class="product-detail-price">KSh ${product.price.toFixed(2)}</p>
-        <p class="product-detail-description">
-          ${isClothes 
-            ? 'Comfortable and stylish clothing perfect for everyday wear. Made with quality materials for lasting comfort and ease.' 
-            : 'An engaging book filled with exciting stories and adventures. Perfect for young readers and the whole family to enjoy together.'}
-        </p>
-        ${isClothes ? `
-          <div class="product-detail-options">
-            <label>Select Size:</label>
-            <div class="size-selector">
-              <button class="size-btn" onclick="selectSize('XS', this)">XS</button>
-              <button class="size-btn" onclick="selectSize('S', this)">S</button>
-              <button class="size-btn" onclick="selectSize('M', this)">M</button>
-              <button class="size-btn" onclick="selectSize('L', this)">L</button>
-              <button class="size-btn" onclick="selectSize('XL', this)">XL</button>
-            </div>
-          </div>
-        ` : ''}
-        <div class="quantity-selector">
-          <label>Quantity:</label>
-          <div>
-            <button onclick="changeQty(-1)">-</button>
-            <span id="qtyDisplay">1</span>
-            <button onclick="changeQty(1)">+</button>
-          </div>
-        </div>
-        <button class="btn btn-primary add-to-cart-btn" onclick="addToCart(${product.id})">Add to Cart</button>
-      </div>
-    </div>
-  `;
+       <p class="product-detail-description">
+         ${isClothes 
+           ? 'Comfortable and stylish clothing perfect for everyday wear. Made with quality materials for lasting comfort and ease.' 
+           : 'An engaging book filled with exciting stories and adventures. Perfect for young readers and the whole family to enjoy together.'}
+       </p>
+       ${isClothes ? `
+         <div class="product-detail-options">
+           <label>Select Size:</label>
+           <div class="size-selector">
+             <button class="size-btn" onclick="selectSize('XS', this)">XS</button>
+             <button class="size-btn" onclick="selectSize('S', this)">S</button>
+             <button class="size-btn" onclick="selectSize('M', this)">M</button>
+             <button class="size-btn" onclick="selectSize('L', this)">L</button>
+             <button class="size-btn" onclick="selectSize('XL', this)">XL</button>
+           </div>
+         </div>
+       ` : ''}
+       <div class="quantity-selector">
+         <label>Quantity:</label>
+         <div>
+           <button onclick="changeQty(-1)">-</button>
+           <span id="qtyDisplay">1</span>
+           <button onclick="changeQty(1)">+</button>
+         </div>
+       </div>
+       <button class="btn btn-primary add-to-cart-btn" onclick="addToCart(${product.id})">Add to Cart</button>
+     </div>
+     <div class="product-delivery-info">
+       <div class="delivery-info-item">
+         <span class="delivery-info-icon">🚚</span>
+         <div>
+           <strong>Nairobi Delivery</strong>
+           <p>24–48hrs — KSh 200 flat rate</p>
+         </div>
+       </div>
+       <div class="delivery-info-item">
+         <span class="delivery-info-icon">↩️</span>
+         <div>
+           <strong>Easy Returns</strong>
+           <p>7-day returns on unworn items</p>
+         </div>
+       </div>
+       <div class="delivery-info-item">
+         <span class="delivery-info-icon">📱</span>
+         <div>
+           <strong>Pay via M-Pesa</strong>
+           <p>Safe and instant payment</p>
+         </div>
+       </div>
+       <div class="delivery-info-item">
+         <span class="delivery-info-icon">💬</span>
+         <div>
+           <strong>Need Help?</strong>
+           <a href="https://wa.me/254712345678" target="_blank">Chat on WhatsApp</a>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+`;
   
   window.selectSize = function(size, btn) {
     selectedSize = size;
@@ -372,6 +430,37 @@ function loadProductDetail() {
     } else {
       cart.push({ id: prod.id, name: prod.name, price: prod.price, qty: qty, icon: prod.icon, size: selectedSize, category: prod.category, subcategory: prod.subcategory });
     }
+    
+    saveCart();
+    alert('Added to cart!');
+    updateCartCount();
+  };
+}
+
+function injectProductSchema(product) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "description": product.description || '',
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "KES",
+      "price": product.price,
+      "availability": product.in_stock
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Faith & Fashion Nairobi"
+      }
+    }
+  };
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+}
     
     saveCart();
     alert('Added to cart!');

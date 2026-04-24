@@ -5,133 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Admin Dashboard - Faith & Fashion Nairobi">
   <meta name="theme-color" content="#1e3a5f">
+  <meta http-equiv="Content-Security-Policy"
+  content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co; img-src 'self' data: https:;">
   <title>Admin - Faith & Fashion Nairobi</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-</head>
-<body>
-  <header class="header" id="header"></header>
-  
-  <section class="section">
-    <div class="container">
-      <div id="loginScreen" class="card" style="max-width:400px;margin:2rem auto;text-align:center;">
-        <h2>Admin Login</h2>
-        <p style="color:var(--text-light);margin-bottom:1rem;">Enter password to access admin panel</p>
-        <div class="form-group">
-          <input type="password" id="adminPassword" placeholder="Enter password">
-        </div>
-        <button class="btn btn-primary" style="width:100%;" onclick="login()">Login</button>
-        <p id="loginError" style="color:var(--secondary);margin-top:0.5rem;display:none;">Incorrect password</p>
-      </div>
-      
-      <div id="adminPanel" style="display:none;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
-          <h1>Admin Dashboard</h1>
-          <button class="btn btn-outline" onclick="logout()">Logout</button>
-        </div>
-        
-        <div class="tabs" style="display:flex;gap:0.5rem;margin-bottom:1.5rem;border-bottom:2px solid var(--background);">
-          <button class="tab-btn active" onclick="showTab('products')" data-tab="products">Products</button>
-          <button class="tab-btn" onclick="showTab('orders')" data-tab="orders">Orders</button>
-        </div>
-        
-        <div id="productsTab">
-          <div class="card" style="margin-bottom:1.5rem;">
-            <h3>Add New Product</h3>
-            <form id="addProductForm" style="gap:1rem;margin-top:1rem;">
-              <div class="form-group">
-                <label>Product Name</label>
-                <input type="text" id="newProductName" required placeholder="Enter product name">
-              </div>
-              <div class="form-group">
-                <label>Price</label>
-                <input type="number" id="newProductPrice" step="0.01" required placeholder="0.00">
-              </div>
-              <div class="form-group">
-                <label>Category</label>
-                <select id="newProductCategory">
-                  <option value="clothes">Clothes</option>
-                  <option value="books">Books</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Subcategory</label>
-                <select id="newProductSubcategory">
-                  <option value="men">Men</option>
-                  <option value="women">Women</option>
-                  <option value="children">Children</option>
-                  <option value="fiction">Fiction</option>
-                  <option value="textbooks">Textbooks</option>
-                  <option value="childrens">Children's Books</option>
-                </select>
-              </div>
-              <div class="form-group" style="grid-column:1/-1;">
-                <label>Description</label>
-                <input type="text" id="newProductDescription" placeholder="Product description">
-              </div>
-              <div class="form-group">
-                <label>Icon (emoji)</label>
-                <input type="text" id="newProductIcon" placeholder="👕" value="👕">
-              </div>
-              <div class="form-group">
-                <label>In Stock</label>
-                <select id="newProductInStock">
-                  <option value="true">Yes</option>
-                  <option value="false">No</option>
-                </select>
-              </div>
-              <button type="submit" class="btn btn-primary" style="grid-column:1/-1;">Add Product</button>
-            </form>
-          </div>
-          
-          <div class="card">
-            <h3>All Products</h3>
-            <div style="overflow-x:auto;">
-              <table class="admin-table" id="productsTable">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Category</th>
-                    <th>In Stock</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        
-        <div id="ordersTab" style="display:none;">
-          <div class="card">
-            <h3>All Orders</h3>
-            <div style="overflow-x:auto;">
-              <table class="admin-table" id="ordersTable">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Customer</th>
-                    <th>Phone</th>
-                    <th>Total</th>
-                    <th>Payment</th>
-                    <th>Status</th>
-                    <th>Date</th>
-                  </tr>
-                </thead>
-                <tbody></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-<script src="config.js" defer></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.min.js"
+  integrity="sha256-REPLACE_with_ACTUAL_HASH"
+  crossorigin="anonymous"
+  defer>
+</script>
+  <script src="config.js" defer></script>
    <script src="assets/js/main.js" defer></script>
    <script>
       let products = [];

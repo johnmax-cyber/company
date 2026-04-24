@@ -5,103 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contact Faith & Fashion Nairobi - Get in touch for orders and inquiries">
   <meta name="theme-color" content="#1e3a5f">
+  <meta http-equiv="Content-Security-Policy"
+  content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co; img-src 'self' data: https:;">
   <title>Contact - Faith & Fashion Nairobi</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-</head>
-<body>
-  <header class="header" id="header"></header>
-  
-  <section class="section">
-    <div class="container">
-      <h1 class="section-title">Contact Us</h1>
-      
-      <div class="contact-grid">
-        <div>
-          <div class="contact-card">
-            <div class="contact-card-icon">📞</div>
-            <h3>Call Us</h3>
-            <p>Mon - Sat: 9AM - 6PM</p>
-            <a href="tel:+254712345678" class="btn btn-primary">📱 +254 712 345 678</a>
-          </div>
-          
-          <div class="contact-card">
-            <div class="contact-card-icon">💬</div>
-            <h3>WhatsApp</h3>
-            <p>Chat with us on WhatsApp</p>
-            <a href="https://wa.me/254712345678" target="_blank" class="btn btn-whatsapp">💚 WhatsApp</a>
-          </div>
-          
-          <div class="contact-card">
-            <div class="contact-card-icon">📧</div>
-            <h3>Email</h3>
-            <p>Send us an email anytime</p>
-            <a href="mailto:faithandfashionnairobi@gmail.com" class="btn btn-outline">✉️ faithandfashionnairobi@gmail.com</a>
-          </div>
-          
-          <div class="contact-card">
-            <div class="contact-card-icon">🕐</div>
-            <h3>Business Hours</h3>
-            <div class="hours-list">
-              <p><span>Monday</span><span>9:00 AM - 6:00 PM</span></p>
-              <p><span>Tuesday</span><span>9:00 AM - 6:00 PM</span></p>
-              <p><span>Wednesday</span><span>9:00 AM - 6:00 PM</span></p>
-              <p><span>Thursday</span><span>9:00 AM - 6:00 PM</span></p>
-              <p><span>Friday</span><span>9:00 AM - 6:00 PM</span></p>
-              <p><span>Saturday</span><span>9:00 AM - 4:00 PM</span></p>
-              <p><span>Sunday</span><span>Closed</span></p>
-            </div>
-          </div>
-        </div>
-        
-        <div>
-          <div class="contact-card">
-            <div class="contact-card-icon">📍</div>
-            <h3>Visit Us</h3>
-            <p>Company Shop</p>
-            <p style="color:var(--text-light);">123 Shop Street, Nairobi</p>
-            <p style="color:var(--text-light);">Kenya</p>
-          </div>
-          
-          <div class="map-container">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.814402802454!2d36.8219!3d-1.2921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMTcnMy44MCJcTzMywrA1MScwNi42Ilc!5e0!3m2!1sen!2ske!4v1609459200000"
-              width="100%" 
-              height="300" 
-              style="border:0;border-radius:var(--radius);" 
-              allowfullscreen="" 
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-        </div>
-      </div>
-      
-      <div class="contact-form-section">
-        <h2>Send Us a Message</h2>
-        <form class="contact-form" onsubmit="handleSubmit(event)">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required placeholder="Enter your name">
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="Enter your email">
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required placeholder="How can we help?"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
-  
-<footer class="footer" id="footer"></footer>
-  
+  <script
+  src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.min.js"
+  integrity="sha256-REPLACE_with_ACTUAL_HASH"
+  crossorigin="anonymous"
+  defer>
+</script>
   <script src="config.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script>

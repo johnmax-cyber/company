@@ -5,28 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Shopping Cart - Faith & Fashion Nairobi">
   <meta name="theme-color" content="#1e3a5f">
+  <meta http-equiv="Content-Security-Policy"
+  content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co; img-src 'self' data: https:;">
   <title>Cart - Faith & Fashion Nairobi</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-</head>
-<body class="cart-page">
-  <header class="header" id="header"></header>
-  
-  <section class="section">
-    <div class="container">
-      <h1 class="section-title">Your Cart</h1>
-      
-      <div id="cartItems"></div>
-      
-      <div id="cartTotal"></div>
-    </div>
-  </section>
-  
-  <footer class="footer" id="footer"></footer>
-  
-   <script src="config.js" defer></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.min.js"
+  integrity="sha256-REPLACE_with_ACTUAL_HASH"
+  crossorigin="anonymous"
+  defer>
+</script>
+  <script src="config.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>
