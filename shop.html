@@ -24,51 +24,566 @@
   
   <section class="section">
     <div class="container">
-      <h1 class="section-title">Shop All Products</h1>
+      <div class="shop-header">
+        <h1 class="section-title" style="margin-bottom:0;">Shop All Products</h1>
+        <div class="shop-search">
+          <input type="text" id="searchInput" placeholder="Search products..." aria-label="Search products">
+          <button id="searchBtn" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+      
+      <div class="results-bar">
+        <span id="resultCount" class="result-count">Loading products...</span>
+        <div id="activeFilters" class="active-filters"></div>
+      </div>
       
       <div class="shop-layout">
         <aside class="sidebar">
           <h3>Categories</h3>
-          
-          <div class="filter-group">
-            <h4>Clothes</h4>
-            <a class="filter-link active" data-category="clothes" data-subcategory="" onclick="filterByCategory('clothes', 'all')">All Clothes</a>
-            <a class="filter-link" data-category="clothes" data-subcategory="men" onclick="filterByCategory('clothes', 'men')">Men</a>
-            <a class="filter-link" data-category="clothes" data-subcategory="women" onclick="filterByCategory('clothes', 'women')">Women</a>
-            <a class="filter-link" data-category="clothes" data-subcategory="children" onclick="filterByCategory('clothes', 'children')">Children</a>
+          <div id="categoryFilters" class="filter-group">
+            <div class="filter-option">
+              <input type="checkbox" id="cat_all" name="category" value="all" checked>
+              <label for="cat_all">All Categories</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="cat_men" name="category" value="men">
+              <label for="cat_men">Men's Clothing</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="cat_women" name="category" value="women">
+              <label for="cat_women">Women's Clothing</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="cat_kids" name="category" value="children">
+              <label for="cat_kids">Kids</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="cat_books" name="category" value="books">
+              <label for="cat_books">Books</label>
+            </div>
           </div>
           
+          <h3>Availability</h3>
           <div class="filter-group">
-            <h4>Books</h4>
-            <a class="filter-link" data-category="books" data-subcategory="" onclick="filterByCategory('books', 'all')">All Books</a>
-            <a class="filter-link" data-category="books" data-subcategory="devotional" onclick="filterByCategory('books', 'devotional')">Devotional</a>
-            <a class="filter-link" data-category="books" data-subcategory="study" onclick="filterByCategory('books', 'study')">Study Guides</a>
-            <a class="filter-link" data-category="books" data-subcategory="childrens" onclick="filterByCategory('books', 'childrens')">Children's</a>
+            <div class="filter-option">
+              <input type="checkbox" id="avail_instock" name="availability" value="instock">
+              <label for="avail_instock">In Stock Only</label>
+            </div>
           </div>
+          
+          <h3>Price Range</h3>
+          <div class="filter-group">
+            <div class="price-range">
+              <input type="range" id="priceMin" min="0" max="30000" value="0" aria-label="Minimum price">
+              <input type="range" id="priceMax" min="0" max="30000" value="30000" aria-label="Maximum price">
+              <div class="price-labels">
+                <span id="priceMinLabel">KSh 0</span>
+                <span id="priceMaxLabel">KSh 30,000</span>
+              </div>
+            </div>
+          </div>
+          
+          <h3>Clothing Sizes</h3>
+          <div class="filter-group" id="sizeFilters">
+            <div class="size-options">
+              <button class="size-btn" data-size="XS" aria-pressed="false">XS</button>
+              <button class="size-btn" data-size="S" aria-pressed="false">S</button>
+              <button class="size-btn" data-size="M" aria-pressed="false">M</button>
+              <button class="size-btn" data-size="L" aria-pressed="false">L</button>
+              <button class="size-btn" data-size="XL" aria-pressed="false">XL</button>
+            </div>
+          </div>
+          
+          <button id="clearFilters" class="btn btn-outline" style="width:100%;margin-top:1rem;">Clear All Filters</button>
         </aside>
         
         <main>
-          <div class="results-bar">
-            <span id="resultCount" class="result-count">Loading products...</span>
-            <div id="activeFilters" class="active-filters"></div>
-          </div>
-
-          <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search products..." oninput="handleSearch(this.value)">
-            <select onchange="sortBy(this.value)">
-              <option value="">Sort by...</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="name">Name: A to Z</option>
-            </select>
+          <div class="shop-controls">
+            <div class="results-info">
+              <span id="resultCountMain">0</span> products
+            </div>
+            <div class="sort-options">
+              <label for="sortSelect">Sort by:</label>
+              <select id="sortSelect" aria-label="Sort products">
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="name-asc">Name: A to Z</option>
+                <option value="name-desc">Name: Z to A</option>
+                <option value="newest">Newest</option>
+                <option value="rating">Highest Rated</option>
+              </select>
+            </div>
           </div>
           
-          <div class="products-grid" id="productsGrid"></div>
+          <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded here -->
+          </div>
+          
+          <div id="loadMoreContainer" style="text-align:center;margin-top:2rem;">
+            <button id="loadMoreBtn" class="btn btn-outline" style="display:none;">Load More</button>
+          </div>
+          
+          <div id="emptyState" class="empty-state" style="display:none;">
+            <div style="font-size:4rem;margin-bottom:1rem;">🔍</div>
+            <h3>No products found</h3>
+            <p style="color:var(--text-light);margin-bottom:1.5rem;">Try adjusting your filters or search terms</p>
+            <button id="resetSearch" class="btn btn-primary">Reset All Filters</button>
+          </div>
         </main>
       </div>
     </div>
   </section>
   
   <footer class="footer" id="footer"></footer>
+  
+  <script>
+    // Shop-specific script
+    let allProducts = [];
+    let filteredProducts = [];
+    let currentSort = 'featured';
+    let currentPage = 1;
+    const itemsPerPage = 12;
+    let selectedSizes = new Set();
+    
+    async function loadProducts() {
+      // Try Supabase first, fall back to local JSON
+      try {
+        const supabaseUrl = window.__SUPABASE_URL__ || '';
+        if (supabaseUrl && !supabaseUrl.includes('YOUR_SUPABASE')) {
+          const { createClient } = supabase;
+          const supabaseClient = createClient(
+            window.__SUPABASE_URL__ || '',
+            window.__SUPABASE_ANON_KEY__ || ''
+          );
+          const { data, error } = await supabaseClient
+            .from('products')
+            .select('*')
+            .eq('in_stock', true);
+          
+          if (!error && data) {
+            allProducts = data.map(p => ({
+              ...p,
+              images: p.image_url ? [p.image_url] : [`https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&auto=format&fit=crop`]
+            }));
+            renderProducts();
+            return;
+          }
+        }
+      } catch (e) {
+        console.log('Supabase not available, using local data');
+      }
+      
+      // Fall back to local JSON
+      try {
+        const response = await fetch('products.json');
+        const data = await response.json();
+        allProducts = data.products;
+        renderProducts();
+      } catch (e) {
+        console.error('Failed to load products:', e);
+        document.getElementById('resultCount').textContent = 'Failed to load products';
+      }
+    }
+    
+    function getFilteredProducts() {
+      let result = [...allProducts];
+      
+      // Category filter
+      const checkedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked'))
+        .map(cb => cb.value);
+      if (!checkedCategories.includes('all')) {
+        result = result.filter(p => checkedCategories.includes(p.subcategory));
+      }
+      
+      // Availability filter
+      if (document.getElementById('avail_instock').checked) {
+        result = result.filter(p => p.inStock);
+      }
+      
+      // Price range filter
+      const minPrice = parseInt(document.getElementById('priceMin').value);
+      const maxPrice = parseInt(document.getElementById('priceMax').value);
+      result = result.filter(p => p.price >= minPrice && p.price <= maxPrice);
+      
+      // Size filter (for clothing)
+      if (selectedSizes.size > 0) {
+        result = result.filter(p => {
+          if (!p.sizes) return false;
+          return p.sizes.some(s => selectedSizes.has(s.toUpperCase()));
+        });
+      }
+      
+      // Search filter
+      const searchQuery = document.getElementById('searchInput').value.toLowerCase().trim();
+      if (searchQuery) {
+        result = result.filter(p => 
+          p.name.toLowerCase().includes(searchQuery) ||
+          p.description.toLowerCase().includes(searchQuery) ||
+          p.category.toLowerCase().includes(searchQuery) ||
+          p.subcategory.toLowerCase().includes(searchQuery)
+        );
+      }
+      
+      return result;
+    }
+    
+    function sortProducts(products) {
+      const sorted = [...products];
+      switch (currentSort) {
+        case 'price-low':
+          return sorted.sort((a, b) => a.price - b.price);
+        case 'price-high':
+          return sorted.sort((a, b) => b.price - a.price);
+        case 'name-asc':
+          return sorted.sort((a, b) => a.name.localeCompare(b.name));
+        case 'name-desc':
+          return sorted.sort((a, b) => b.name.localeCompare(a.name));
+        case 'rating':
+          return sorted.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+        case 'newest':
+          return sorted.sort((a, b) => b.id - a.id);
+        default:
+          return sorted.sort((a, b) => {
+            // Feature best sellers and high-rated first
+            const aScore = (a.tags || []).includes('Best Seller') ? 10 : 0 + (a.rating || 0);
+            const bScore = (b.tags || []).includes('Best Seller') ? 10 : 0 + (b.rating || 0);
+            return bScore - aScore;
+          });
+      }
+    }
+    
+    function formatCurrency(amount) {
+      return new Intl.NumberFormat('en-KE', {
+        style: 'currency',
+        currency: 'KES',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      }).format(amount);
+    }
+    
+    function renderProducts() {
+      filteredProducts = getFilteredProducts();
+      filteredProducts = sortProducts(filteredProducts);
+      
+      const grid = document.getElementById('productsGrid');
+      const resultCount = document.getElementById('resultCount');
+      const resultCountMain = document.getElementById('resultCountMain');
+      const emptyState = document.getElementById('emptyState');
+      
+      resultCount.textContent = `${filteredProducts.length} product${filteredProducts.length !== 1 ? 's' : ''} found`;
+      resultCountMain.textContent = filteredProducts.length;
+      
+      if (filteredProducts.length === 0) {
+        grid.innerHTML = '';
+        emptyState.style.display = 'block';
+        return;
+      }
+      
+      emptyState.style.display = 'none';
+      
+      // Load first page
+      currentPage = 1;
+      renderPage();
+    }
+    
+    function renderPage() {
+      const grid = document.getElementById('productsGrid');
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      const pageProducts = filteredProducts.slice(0, end);
+      
+      grid.innerHTML = pageProducts.map(product => {
+        const isNew = product.tags && product.tags.includes('New');
+        const isSale = product.tags && product.tags.includes('Sale');
+        const badgeHtml = isNew ? '<span class="product-badge new-badge">New</span>' : 
+                          isSale ? '<span class="product-badge sale-badge">Sale</span>' : '';
+        
+        return `
+          <article class="product-card" aria-label="${product.name}">
+            <div class="product-image-wrapper">
+              <img 
+                src="${product.images[0]}" 
+                alt="${product.name}"
+                loading="lazy"
+                width="400"
+                height="500"
+              >
+              ${badgeHtml}
+              ${!product.inStock ? '<span class="product-badge outofstock-badge">Out of Stock</span>' : ''}
+              <div class="product-quickview">
+                <a href="product.html?id=${product.id}" class="btn btn-primary btn-sm">Quick View</a>
+              </div>
+            </div>
+            <div class="product-info">
+              <span class="product-category-tag">${product.subcategory}</span>
+              <h3 class="product-title">${product.name}</h3>
+              <div class="product-price">
+                <span class="current-price">${formatCurrency(product.price)}</span>
+                ${product.compareAtPrice ? `<span class="compare-price">${formatCurrency(product.compareAtPrice)}</span>` : ''}
+              </div>
+              ${product.inStock ? `
+                <button class="btn btn-primary btn-sm add-to-cart-btn" 
+                        onclick="addToCartQuick(${product.id})" 
+                        aria-label="Add ${product.name} to cart">
+                  Add to Cart
+                </button>
+              ` : `
+                <button class="btn btn-secondary btn-sm" disabled>Out of Stock</button>
+              `}
+            </div>
+          </article>
+        `;
+      }).join('');
+      
+      // Show/hide load more
+      const loadMoreContainer = document.getElementById('loadMoreContainer');
+      const loadMoreBtn = document.getElementById('loadMoreBtn');
+      if (filteredProducts.length > end) {
+        loadMoreBtn.style.display = 'inline-block';
+        loadMoreBtn.onclick = () => {
+          currentPage++;
+          renderPage();
+        };
+      } else {
+        loadMoreBtn.style.display = 'none';
+      }
+    }
+    
+    function updateActiveFilters() {
+      const container = document.getElementById('activeFilters');
+      const chips = [];
+      
+      const checkedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked'))
+        .filter(cb => cb.value !== 'all')
+        .map(cb => cb.labels[0].textContent);
+      checkedCategories.forEach(cat => {
+        chips.push(`<span class="filter-chip">${cat} <span onclick="removeCategoryFilter('${cat}')" style="margin-left:0.5rem;cursor:pointer;">×</span></span>`);
+      });
+      
+      if (document.getElementById('avail_instock').checked) {
+        chips.push('<span class="filter-chip">In Stock <span onclick="removeFilter(\'availability\')" style="margin-left:0.5rem;cursor:pointer;">×</span></span>');
+      }
+      
+      if (document.getElementById('priceMin').value > 0 || document.getElementById('priceMax').value < 30000) {
+        const min = parseInt(document.getElementById('priceMin').value);
+        const max = parseInt(document.getElementById('priceMax').value);
+        chips.push(`<span class="filter-chip">${formatCurrency(min)} - ${formatCurrency(max)} <span onclick="removeFilter(\'price\')" style="margin-left:0.5rem;cursor:pointer;">×</span></span>`);
+      }
+      
+      if (selectedSizes.size > 0) {
+        selectedSizes.forEach(size => {
+          chips.push(`<span class="filter-chip">Size ${size} <span onclick="removeSizeFilter('${size}')" style="margin-left:0.5rem;cursor:pointer;">×</span></span>`);
+        });
+      }
+      
+      container.innerHTML = chips.join('');
+    }
+    
+    function removeCategoryFilter(category) {
+      const label = Array.from(document.querySelectorAll('input[name="category"]')).find(cb => cb.labels[0].textContent === category);
+      if (label) {
+        label.checked = false;
+        renderProducts();
+        updateActiveFilters();
+      }
+    }
+    
+    function removeFilter(type) {
+      if (type === 'availability') {
+        document.getElementById('avail_instock').checked = false;
+      } else if (type === 'price') {
+        document.getElementById('priceMin').value = 0;
+        document.getElementById('priceMax').value = 30000;
+        document.getElementById('priceMinLabel').textContent = 'KSh 0';
+        document.getElementById('priceMaxLabel').textContent = 'KSh 30,000';
+      }
+      renderProducts();
+      updateActiveFilters();
+    }
+    
+    function removeSizeFilter(size) {
+      selectedSizes.delete(size);
+      const btn = document.querySelector(`.size-btn[data-size="${size}"]`);
+      if (btn) {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      }
+      renderProducts();
+      updateActiveFilters();
+    }
+    
+    // Add to cart (quick add from shop page)
+    window.addToCartQuick = function(productId) {
+      const product = allProducts.find(p => p.id === productId);
+      if (!product) return;
+      
+      let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const existing = cart.find(item => item.id === product.id);
+      
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.images[0],
+          qty: 1
+        });
+      }
+      
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+      
+      // Show toast
+      showToast(`${product.name} added to cart`);
+    };
+    
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.className = 'toast-notification';
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      setTimeout(() => {
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+          setTimeout(() => toast.remove(), 300);
+        }, 2000);
+      }, 100);
+    }
+    
+    // Initialize filters
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.location.pathname.includes('shop')) return;
+      
+      // Search
+      document.getElementById('searchBtn').addEventListener('click', renderProducts);
+      document.getElementById('searchInput').addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') renderProducts();
+      });
+      
+      // Category filters
+      document.querySelectorAll('input[name="category"]').forEach(cb => {
+        cb.addEventListener('change', () => {
+          if (cb.value !== 'all' && cb.checked) {
+            // Uncheck all category checkboxes
+            document.querySelectorAll('input[name="category"]').forEach(c => {
+              if (c.value !== cb.value) c.checked = false;
+            });
+            // Ensure 'all' is unchecked
+            document.getElementById('cat_all').checked = false;
+          } else if (cb.value === 'all' && cb.checked) {
+            // Uncheck all other categories
+            document.querySelectorAll('input[name="category"]').forEach(c => {
+              if (c.value !== 'all') c.checked = false;
+            });
+          }
+          // If no categories checked, check 'all'
+          const anyChecked = Array.from(document.querySelectorAll('input[name="category"]:checked')).length;
+          if (anyChecked === 0) {
+            document.getElementById('cat_all').checked = true;
+          }
+          renderProducts();
+          updateActiveFilters();
+        });
+      });
+      
+      // Availability filter
+      document.getElementById('avail_instock').addEventListener('change', () => {
+        renderProducts();
+        updateActiveFilters();
+      });
+      
+      // Price range
+      const priceMin = document.getElementById('priceMin');
+      const priceMax = document.getElementById('priceMax');
+      
+      function updatePriceLabels() {
+        document.getElementById('priceMinLabel').textContent = 'KSh ' + parseInt(priceMin.value).toLocaleString();
+        document.getElementById('priceMaxLabel').textContent = 'KSh ' + parseInt(priceMax.value).toLocaleString();
+      }
+      
+      priceMin.addEventListener('input', () => {
+        let min = parseInt(priceMin.value);
+        let max = parseInt(priceMax.value);
+        if (min > max) {
+          priceMax.value = min;
+          updatePriceLabels();
+        }
+        updatePriceLabels();
+        renderProducts();
+        updateActiveFilters();
+      });
+      
+      priceMax.addEventListener('input', () => {
+        let min = parseInt(priceMin.value);
+        let max = parseInt(priceMax.value);
+        if (max < min) {
+          priceMin.value = max;
+          updatePriceLabels();
+        }
+        updatePriceLabels();
+        renderProducts();
+        updateActiveFilters();
+      });
+      
+      // Size filters
+      document.querySelectorAll('.size-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const size = btn.dataset.size;
+          if (selectedSizes.has(size)) {
+            selectedSizes.delete(size);
+            btn.classList.remove('active');
+            btn.setAttribute('aria-pressed', 'false');
+          } else {
+            selectedSizes.add(size);
+            btn.classList.add('active');
+            btn.setAttribute('aria-pressed', 'true');
+          }
+          renderProducts();
+          updateActiveFilters();
+        });
+      });
+      
+      // Sort
+      document.getElementById('sortSelect').addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        currentPage = 1;
+        renderProducts();
+      });
+      
+      // Clear filters
+      document.getElementById('clearFilters').addEventListener('click', () => {
+        document.getElementById('cat_all').checked = true;
+        document.querySelectorAll('input[name="category"]').forEach(c => {
+          if (c.value !== 'all') c.checked = false;
+        });
+        document.getElementById('avail_instock').checked = false;
+        priceMin.value = 0;
+        priceMax.value = 30000;
+        updatePriceLabels();
+        selectedSizes.clear();
+        document.querySelectorAll('.size-btn').forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        document.getElementById('searchInput').value = '';
+        document.getElementById('sortSelect').value = 'featured';
+        currentSort = 'featured';
+        renderProducts();
+        updateActiveFilters();
+      });
+      
+      // Reset search
+      document.getElementById('resetSearch').addEventListener('click', () => {
+        document.getElementById('clearFilters').click();
+      });
+      
+      // Load products
+      loadProducts();
+    });
+  </script>
 </body>
 </html>

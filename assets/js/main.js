@@ -616,11 +616,87 @@ function saveCart() {
 }
 
 function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
   const countEl = document.getElementById('cartCount');
   if (countEl) {
     const count = cart.reduce((sum, item) => sum + item.qty, 0);
     countEl.textContent = count;
   }
+}
+
+window.addToCartQuick = function(productId) {
+  // Try loading from products.json first
+  fetch('products.json')
+    .then(response => response.json())
+    .then(data => {
+      const products = data.products;
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+      
+      let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const existing = cart.find(item => item.id === product.id);
+      
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.images ? product.images[0] : '',
+          qty: 1
+        });
+      }
+      
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+      showToast(product.name + ' added to cart');
+    })
+    .catch(() => {
+      // Fallback to products loaded via supabase
+      if (typeof allProducts !== 'undefined') {
+        const allProds = allProducts;
+        const product = allProds.find(p => p.id === productId);
+        if (!product) return;
+        
+        let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        const existing = cart.find(item => item.id === product.id);
+        
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.images ? product.images[0] : '',
+            qty: 1
+          });
+        }
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        showToast(product.name + ' added to cart');
+      }
+    });
+};
+
+function showToast(message) {
+  const existing = document.querySelector('.toast-notification');
+  if (existing) existing.remove();
+  
+  const toast = document.createElement('div');
+  toast.className = 'toast-notification';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  
+  setTimeout(() => {
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 300);
+    }, 2500);
+  }, 100);
 }
 
 function renderAdmin() {
