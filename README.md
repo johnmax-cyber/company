@@ -1,387 +1,205 @@
-# Faith & Fashion Nairobi - E-commerce Storefront
+# Faith & Fashion Nairobi - E-commerce Platform
 
-A complete, modern e-commerce website built with vanilla HTML, CSS, and JavaScript. Features a full product catalog, advanced filtering/search, product detail pages, shopping cart, checkout flow, and admin dashboard.
+A secure, performant, and scalable e-commerce platform for Faith & Fashion Nairobi built with vanilla JavaScript, Supabase, and Vercel.
 
-## Live Demo
+## 🚀 Major Improvements
 
-https://company-cyber.vercel.app
+### Security Hardening
+- **Environment Variables**: All secrets moved to Vercel environment variables (SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY)
+- **API Protection**: Admin endpoints now require Supabase JWT authentication
+- **Input Validation**: Strict validation on all API inputs to prevent injection attacks
+- **Rate Limiting**: Basic rate limiting implemented on admin endpoints to prevent abuse
+- **Secure Error Handling**: Generic error messages in production to prevent information leakage
+- **CORS Restriction**: More restrictive CORS policies for API endpoints
+- **No Frontend Secrets**: Removed all secrets from client-side code
 
-## Features
+### Performance Optimization
+- **Modular Architecture**: Clean separation of concerns with ES6 modules
+- **Caching Layer**: Product data cached in localStorage with 5-minute TTL
+- **Lazy Loading**: Images load only when needed
+- **Optimized Database Queries**: Added indexes on frequently queried columns
+- **Reduced API Calls**: Request deduplication and efficient data fetching
+- **Code Splitting**: Route-based code splitting for faster initial load
 
-### 🛍️ Product Catalog
-- 28+ products across 4 categories (Men, Women, Kids, Books)
-- Product cards with images, prices, badges (New, Sale, Out of Stock)
-- Quick view and add to cart functionality
-- Pagination support
+### Code Quality & Maintainability
+- **Modular Structure**: Organized into components, pages, services, and utils
+- **Reusable Components**: Header, footer, product cards, cart items as reusable classes
+- **Consistent Patterns**: Standardized error handling, state management, and API calls
+- **Separation of Concerns**: Business logic separated from DOM manipulation
+- **Type Safety**: Improved data validation and error handling
 
-### 🔍 Search & Filters
-- Full-text search across product names, descriptions
-- Category filters (Men, Women, Kids, Books)
-- Price range slider (KSh 0 - 30,000)
-- Size filters for clothing items
-- In-stock toggle
-- Active filter chips with clear/remove options
-
-### 🔖 Sorting Options
-- Featured (best sellers + rating)
-- Price: Low to High
-- Price: High to Low
-- Name: A to Z / Z to A
-- Newest arrivals
-- Highest rated
-
-### 📄 Product Detail Pages
-- Image gallery with thumbnail navigation
-- Price display with compare-at pricing
-- Size selector (clothing items)
-- Color selector
-- Quantity selector
-- Add to cart with toast notifications
-- JSON-LD structured data for SEO
-- Delivery & returns info
-- Care instructions
-- Related products carousel
-
-### 🛒 Shopping Cart
-- LocalStorage persistence
-- Quantity adjustment controls
-- Remove items
-- Subtotal, shipping, and total calculation
-- Sticky summary panel
-
-### 🏦 Checkout Flow
-- Customer information form (name, phone, email, address)
-- Nairobi area selection
-- Delivery notes
-- Payment method selector (M-Pesa, Cash on Delivery)
-- Order summary
-- Order confirmation page with order ID
-- Orders saved to localStorage
-
-### 🏠 Homepage
-- Hero section with CTAs
-- Feature highlights (delivery, payments, returns, support)
-- Featured categories grid
-- Best Sellers section (8 products)
-- New Arrivals section
-- Why Choose Us feature cards
-- Trust strip with guarantees
-
-### 📞 Contact & Support
-- Contact form with Supabase integration
-- Multiple contact methods (phone, WhatsApp, email)
-- Business hours
-
-### 👑 Admin Dashboard
-- Login system
-- Product management (view, add, update, delete)
-- Order management with status updates
-- Statistics dashboard
-
-## Tech Stack
-
-- **Frontend**: Vanilla HTML5, CSS3, JavaScript (ES6+)
-- **Styling**: Custom CSS with Flexbox & Grid, no frameworks
-- **Backend**: Supabase (PostgreSQL, Auth, Storage via Edge Functions)
-- **Deployment**: Vercel
-- **Icons**: Unicode emojis for rapid prototyping
-- **Images**: Unsplash placeholders (easy to swap with real product photos)
-
-## File Structure
+## 📁 Updated Folder Structure
 
 ```
-├── index.html              # Homepage
-├── shop.html               # Product listing with filters
-├── product.html            # Product detail page
-├── cart.html               # Shopping cart
-├── contact.html            # Contact form
-├── admin.html              # Admin dashboard
-├── products.json           # Product catalog (28 items)
-├── config.js               # Supabase configuration
+src/
+├── components/
+│   ├── header.js
+│   ├── footer.js
+│   ├── product-card.js
+│   ├── cart-item.js
+│   └── loading-spinner.js
+├── pages/
+│   ├── home.js
+│   ├── shop.js
+│   ├── product.js
+│   ├── cart.js
+│   └── admin.js
+├── utils/
+│   ├── supabase.js
+│   ├── storage.js
+│   ├── formatters.js
+│   └── validators.js
+├── services/
+│   ├── product-service.js
+│   ├── cart-service.js
+│   └── order-service.js
 ├── assets/
 │   ├── css/
-│   │   └── style.css       # All styles (responsive, modern)
-│   └── js/
-│       └── main.js         # Core JS (cart, admin, utilities)
-└── supabase/
-    └── schema.sql          # Database schema + RLS policies
+│   └── images/
+└── api/
+    ├── admin.js
+    └── config.js
 ```
 
-## Installation & Local Development
+## 🔧 Environment Variables Required
 
-### Prerequisites
+Set these in your Vercel project settings:
 
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- Code editor (VS Code recommended)
-- [Optional] Live server extension
+### Required Variables
+- `SUPABASE_URL`: Your Supabase project URL
+- `SUPABASE_ANON_KEY`: Your Supabase anon key (for frontend)
+- `SUPABASE_SERVICE_ROLE_KEY`: Your Supabase service role key (for backend/admin APIs)
+- `NODE_ENV`: Set to "production" for production deployments
 
-### Setup
+### Security Notes
+- **Never** expose `SUPABASE_SERVICE_ROLE_KEY` in frontend code
+- **Never** commit these variables to version control
+- Use Vercel's environment variable system for secure storage
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/johnmax-cyber/company.git
-   cd company
+## 🚀 Deployment Instructions
+
+### 1. Prerequisites
+- Node.js >= 16.x
+- Supabase account and project
+- Vercel account
+- Git repository
+
+### 2. Setup Supabase
+1. Create a new Supabase project
+2. Copy the SQL from `supabase/schema.sql` and run it in your Supabase SQL editor
+3. Note your project URL and anon key from Settings > API
+4. Generate a service role key from Settings > API
+
+### 3. Deploy to Vercel
+1. Push your code to a Git repository (GitHub, GitLab, or Bitbucket)
+2. Import the repository into Vercel
+3. Vercel will automatically detect `vercel.json` and configure the builds
+4. Add the environment variables in Vercel Project Settings > Environment Variables
+5. Deploy!
+
+### 4. Local Development
+1. Install dependencies (if any): `npm install`
+2. Set up local environment variables in a `.env` file:
    ```
-
-2. **Configure Supabase (Optional - uses local data as fallback)**
-   
-   Edit `config.js`:
-   ```javascript
-   window.__SUPABASE_URL__ = 'https://your-project.supabase.co';
-   window.__SUPABASE_ANON_KEY__ = 'your-anon-key';
+   SUPABASE_URL=your_supabase_url
+   SUPABASE_ANON_KEY=your_anon_key
+   SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+   NODE_ENV=development
    ```
+3. Run a local development server (e.g., `npx vercel dev` or use a simple static server)
 
-3. **Run Supabase Schema (if using Supabase backend)**
-   
-   Execute `supabase/schema.sql` in your Supabase SQL Editor.
+## 📱 Features
 
-4. **Run Locally**
-   
-   Open `index.html` in your browser, or use a local server:
-   
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js
-   npx http-server -p 8000
-   ```
-   
-   Visit: `http://localhost:8000`
+### User Features
+- Browse products by category (Men's, Women's, Kids, Books)
+- Search products by name
+- Filter products by category
+- Sort products by price, name, or featured
+- View detailed product information
+- Add products to cart
+- Update cart quantities
+- Secure checkout with M-Pesa or Cash on Delivery
+- Order confirmation and tracking
+- Responsive design for mobile and desktop
 
-### Deploy to Vercel
-
-1. Push to GitHub
-2. Import repository at [vercel.com](https://vercel.com)
-3. Add environment variables (optional):
-   - `SUPABASE_URL`
-   - `SUPABASE_ANON_KEY`
-4. Deploy!
-
-## Product Data Structure
-
-Each product in `products.json` includes:
-
-```json
-{
-  "id": 1,
-  "name": "Classic Dress Shirt",
-  "category": "clothes",
-  "subcategory": "men",
-  "price": 4500,
-  "compareAtPrice": 5200,
-  "inStock": true,
-  "images": ["..."],
-  "description": "...",
-  "sizes": ["S", "M", "L", "XL"],
-  "colors": ["White", "Blue"],
-  "tags": ["New", "Best Seller"],
-  "rating": 4.8,
-  "reviewsCount": 127
-}
-```
-
-## Cart Persistence
-
-The shopping cart is stored in `localStorage` under the key `cart`. Each cart item includes:
-
-- `id` - Product ID
-- `name` - Product name
-- `price` - Product price (KES)
-- `image` - Product image URL
-- `qty` - Quantity
-- `size` - Selected size (optional)
-- `color` - Selected color (optional)
-
-## Checkout & Orders
-
-Completed orders are stored in `localStorage` under the key `orders`. Each order includes:
-
-- Customer details (name, phone, email)
-- Delivery address & area
-- Items array
-- Payment method
-- Order total
-- Timestamp
-
-## Admin Panel
-
-**Default Password**: `admin123` (can be configured via Supabase / Edge Functions)
-
-### Features
+### Admin Features
+- Secure admin dashboard (protected by authentication)
 - View all products
 - Add new products
-- Update existing products
+- Edit existing products
 - Delete products
 - View all orders
-- Update order status (Pending → Confirmed → Delivered)
-- Dashboard statistics
+- Update order status (pending, confirmed, delivered)
+- Basic analytics (order count, revenue, etc.)
 
-### Security Note
+## 🛡️ Security Details
 
-For production, admin operations should use Supabase **Service Role Key** via a secure backend (Edge Function) rather than exposing database credentials in frontend code. The current implementation uses Row Level Security (RLS) to prevent unauthorized reads/writes. Admin credentials should be handled via Supabase Auth or a secure login system.
+### Authentication
+- Admin API endpoints require valid Supabase JWT tokens
+- Tokens must be sent in the Authorization header: `Bearer <token>`
+- Token validation performed against Supabase auth service
 
-## Responsive Design
+### Input Validation
+- All API inputs validated for type, format, and business rules
+- Sanitization to prevent XSS attacks
+- Length limits on text inputs
+- Numerical range validation
 
-Fully responsive across all device sizes:
+### Rate Limiting
+- Admin endpoints limited to 30 requests per minute per IP
+- Helps prevent brute force attacks and abuse
+- Returns 429 Too Many Requests when limit exceeded
 
-- **Desktop** (≥1024px): Full grid layouts, sidebar filters
-- **Tablet** (768px - 1023px): Adjusted grids, stacked layouts
-- **Mobile** (≤767px): Single column, hamburger menu, drawer filters
+### Data Protection
+- Row Level Security (RLS) enabled on all tables
+- Public can only read active products
+- Only service role can access orders and perform admin operations
+- No sensitive data exposed in error messages (production)
 
-## Browser Support
+## ⚡ Performance Details
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+### Caching Strategy
+- Product data cached in localStorage for 5 minutes
+- Cache cleared automatically when data is updated via admin
+- Reduces redundant API calls for frequently accessed data
 
-## Performance
+### Database Optimization
+- Indexes on category, subcategory, price, rating, tags, and status
+- GIN indexes on tags array and items JSONB for efficient querying
+- Updated_at triggers for tracking record modifications
 
-- ⚡ Lazy-loaded images (`loading="lazy"`)
-- ⚡ Efficient filtering/sorting algorithms
-- ⚡ Minimal DOM manipulation
-- ⚡ CSS transitions for smooth interactions
-- ⚡ Toast notifications for user feedback
-- ⚡ No heavy frameworks or libraries
+### Frontend Optimization
+- Lazy loading for all product images
+- Minimal DOM updates using efficient rendering techniques
+- Event delegation for handling user interactions
+- CSS optimized for minimal repaints and reflows
 
-## SEO Features
+## 🧪 Testing
 
-- Semantic HTML5 with proper heading hierarchy
-- Meta tags (title, description, theme-color)
-- Open Graph tags (og:title, og:description, og:url, og:type)
-- JSON-LD Product structured data on PDP
-- ARIA labels for accessibility
-- Proper alt text on images
+### Manual Testing Checklist
+1. Verify environment variables are set correctly
+2. Test product browsing and filtering
+3. Test product search functionality
+4. Test adding/removing items from cart
+5. Test checkout process (both M-Pesa and Cash on Delivery)
+6. Test admin login and authentication
+7. Test admin product management (add/edit/delete)
+8. Test admin order management (view/update status)
+9. Test responsive design on mobile devices
+10. Verify error handling and user feedback
 
-## Accessibility
+### Security Testing
+1. Attempt to access admin endpoints without authentication (should get 401)
+2. Try to send invalid tokens to admin endpoints (should get 401)
+3. Test rate limiting by making rapid requests to admin endpoints
+4. Attempt SQL injection or XSS attacks through input fields
+5. Verify no sensitive data leaked in error messages
+6. Check that frontend code contains no secrets
 
-- ✅ Semantic HTML structure
-- ✅ ARIA attributes for interactive elements
-- ✅ Keyboard navigation support
-- ✅ Focus-visible states
-- ✅ Screen reader friendly labels
-- ✅ Color contrast compliant (WCAG)
-- ✅ Form labels properly associated
+## 📞 Support
 
-## Customization
-
-### Branding
-
-Edit these values to customize:
-
-- **Brand Name**: Update in all HTML pages
-- **Colors**: Modify CSS variables in `:root` (style.css)
-  ```css
-  --primary: #1e3a5f;     /* Main brand color */
-  --secondary: #c53030;   /* Accent color */
-  --background: #f8fafc;  /* Page background */
-  ```
-- **Categories**: Update filters in `shop.html`
-- **Delivery Info**: Edit in `product.html` and `checkout.html`
-- **Policies**: Update return window, delivery areas
-
-### Adding New Products
-
-1. Edit `products.json`
-2. Add product object following the schema
-3. Ensure images are accessible URLs
-4. Use sequential IDs
-
-### Payment Methods
-
-Currently configured for:
-- **M-Pesa** (mobile money)
-- **Cash on Delivery**
-
-To add new methods, update:
-- Payment selector in `cart.html`
-- Checkout logic in `assets/js/main.js`
-
-### Delivery Areas
-
-Currently configured for Nairobi only (24–48hrs). To expand:
-- Update delivery info in `product.html`
-- Update shipping options in `cart.html`
-- Add areas to checkout form
-
-## Limitations & Future Enhancements
-
-### Current Limitations
-- Product images from Unsplash (placeholders - replace with your own)
-- No real payment gateway integration (M-Pesa/Cash placeholders)
-- No user accounts (guest checkout only)
-- Admin auth via simple password (use Supabase Auth for production)
-
-### Recommended Enhancements
-- 🔄 Stripe/M-Pesa Daraja API integration for real payments
-- 👤 User registration & login with Supabase Auth
-- 💖 Wishlist functionality
-- ⭐ Product reviews & ratings system
-- 📦 Inventory management
-- 📧 Email notifications for orders
-- 📍 Order tracking system
-- 💰 Discount codes & coupons
-- 🌍 Multi-language support
-- 📱 PWA capabilities for mobile app experience
-- 🔍 Advanced search with Algolia or similar
-- 📊 Analytics dashboard
-
-## License
-
-MIT License - Feel free to use and modify for your needs.
-
-## Support
-
-For issues or questions:
-- Open an issue on GitHub
-- Email: faithandfashionnairobi@gmail.com
+For issues or questions, please contact the development team or refer to the Supabase and Vercel documentation.
 
 ---
 
-**Built with ❤️ for Faith & Fashion Nairobi**
-
-## What Changed
-
-### Initial Build (v1.0)
-- ✅ Complete product catalog (28 products across 4 categories)
-- ✅ Advanced product filtering (category, price, size, availability)
-- ✅ Full-text search functionality
-- ✅ Multiple sorting options
-- ✅ Product Detail Pages with image galleries
-- ✅ Shopping cart with localStorage persistence
-- ✅ Complete checkout flow (customer info, payment, confirmation)
-- ✅ Admin dashboard for product & order management
-- ✅ Enhanced homepage with hero, categories, best sellers
-- ✅ Trust sections (delivery, returns, policies)
-- ✅ Contact forms
-- ✅ SEO optimization (meta tags, OG tags, JSON-LD)
-- ✅ Accessibility features (ARIA, keyboard nav, focus states)
-- ✅ Performance optimizations (lazy loading, efficient code)
-- ✅ Fully responsive design (mobile-first)
-- ✅ Modern UI/UX with consistent design system
-
-## Technology Choices
-
-**Vanilla HTML/CSS/JS** vs Frameworks:
-- ✅ No build step required - works directly from file system
-- ✅ No npm/node dependencies - lighter and simpler
-- ✅ Faster initial load - no framework overhead
-- ✅ Easier to deploy - just static files
-- ✅ Better for learning and understanding fundamentals
-- ✅ Still achieves modern, professional results
-
-**Supabase** for Backend:
-- ✅ Free tier generous for small/medium sites
-- ✅ Real-time database capabilities
-- ✅ Built-in authentication
-- ✅ File storage for product images
-- ✅ Edge Functions for secure server-side logic
-- ✅ SQL database with advanced features
-
-**Vercel** for Deployment:
-- ✅ Free tier available
-- ✅ Instant deployments from GitHub
-- ✅ Global CDN for fast delivery
-- ✅ Serverless Functions support
-- ✅ Preview deployments for testing
+*Faith & Fashion Nairobi - Premium modest clothing and SDA books for the whole family.*

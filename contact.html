@@ -16,8 +16,10 @@
   crossorigin="anonymous"
   defer>
 </script>
-  <script src="config.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
+  <!-- Load Supabase config from API endpoint -->
+  <script src="/api/config.js" defer></script>
+  <!-- Load main application bundle -->
+  <script type="module" src="/src/main.js" defer></script>
 </head>
 <body>
   <header class="header" id="header"></header>
