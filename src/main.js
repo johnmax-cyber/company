@@ -3,6 +3,7 @@ import { HomePage } from './pages/home.js';
 import { ShopPage } from './pages/shop.js';
 import { CartPage } from './pages/cart.js';
 import { ProductPage } from './pages/product.js';
+import { wishlistService } from './services/wishlist-service.js';
 
 // Initialize design system with modern tokens
 function initializeDesignSystem() {

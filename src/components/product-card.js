@@ -1,13 +1,38 @@
 // Product card component for Faith & Fashion Nairobi
+import { wishlistService } from '../services/wishlist-service.js';
+
 export class ProductCard {
   constructor(product) {
     this.product = product;
+  }
+
+  // Render star rating
+  renderStars(rating) {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+    let stars = '';
+    
+    for (let i = 0; i < 5; i++) {
+      if (i < fullStars) {
+        stars += '<span class="star full">★</span>';
+      } else if (i === fullStars && hasHalfStar) {
+        stars += '<span class="star half">★</span>';
+      } else {
+        stars += '<span class="star empty">★</span>';
+      }
+    }
+    
+    return stars;
   }
 
   // Render the product card HTML
   render() {
     const isNew = this.product.tags && this.product.tags.includes('New');
     const isSale = this.product.tags && this.product.tags.includes('Sale');
+    const rating = this.product.rating || 0;
+    const reviewsCount = this.product.reviewsCount || 0;
+    const isWishlisted = wishlistService.isWishlisted(this.product.id);
+    const ratingStars = this.renderStars(rating);
     
     return `
       <article class="product-card">
@@ -15,6 +40,9 @@ export class ProductCard {
           <img src="${this.product.images[0]}" alt="${escapeHtml(this.product.name)}" loading="lazy" width="400" height="500">
           ${isNew ? '<span class="product-badge new-badge">New</span>' : ''}
           ${isSale ? '<span class="product-badge sale-badge">Sale</span>' : ''}
+          <button class="wishlist-btn ${isWishlisted ? 'wishlisted' : ''}" onclick="wishlistService.toggleWishlist(${this.product.id})" aria-label="Add to wishlist">
+            <span class="heart-icon">♥</span>
+          </button>
           <div class="product-quickview">
             <a href="product.html?id=${this.product.id}" class="btn btn-primary btn-sm">Quick View</a>
           </div>
@@ -22,6 +50,14 @@ export class ProductCard {
         <div class="product-info">
           <span class="product-category-tag">${escapeHtml(this.product.subcategory)}</span>
           <h3 class="product-title">${escapeHtml(this.product.name)}</h3>
+          
+          ${rating > 0 ? `
+            <div class="product-rating">
+              <div class="rating-stars">${ratingStars}</div>
+              <span class="rating-count">(${reviewsCount})</span>
+            </div>
+          ` : ''}
+          
           <div class="product-price">
             <span class="current-price">${formatCurrency(this.product.price)}</span>
             ${this.product.compareAtPrice ? `<span class="compare-price">${formatCurrency(this.product.compareAtPrice)}</span>` : ''}
@@ -39,6 +75,25 @@ export class ProductCard {
 export class ProductCardManager {
   constructor() {
     this.products = [];
+    this.setupWishlistListener();
+  }
+
+  // Setup wishlist update listener
+  setupWishlistListener() {
+    window.addEventListener('wishlistUpdated', (e) => {
+      const productId = e.detail.productId;
+      if (productId) {
+        const btn = document.querySelector(`.wishlist-btn[onclick*="${productId}"]`);
+        if (btn) {
+          const isWishlisted = wishlistService.isWishlisted(productId);
+          if (isWishlisted) {
+            btn.classList.add('wishlisted');
+          } else {
+            btn.classList.remove('wishlisted');
+          }
+        }
+      }
+    });
   }
 
   // Set products
