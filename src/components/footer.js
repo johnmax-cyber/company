@@ -56,6 +56,24 @@ export class Footer {
           <p style="font-size:0.8rem;color:var(--text-light);">Pay via M-Pesa • Cash on Delivery • Secure Checkout</p>
         </div>
       </div>
+      <nav class="bottom-nav" aria-label="Mobile navigation">
+        <a href="index.html" class="bottom-nav-item" id="bnav-home">
+          <span class="bottom-nav-icon">🏠</span>
+          <span class="bottom-nav-label">Home</span>
+        </a>
+        <a href="shop.html" class="bottom-nav-item" id="bnav-shop">
+          <span class="bottom-nav-icon">🏪</span>
+          <span class="bottom-nav-label">Shop</span>
+        </a>
+        <a href="cart.html" class="bottom-nav-item" id="bnav-cart">
+          <span class="bottom-nav-icon">🛒</span>
+          <span class="bottom-nav-label">Cart</span>
+        </a>
+        <a href="contact.html" class="bottom-nav-item" id="bnav-contact">
+          <span class="bottom-nav-icon">💬</span>
+          <span class="bottom-nav-label">Contact</span>
+        </a>
+      </nav>
     `;
   }
 }
