@@ -8,11 +8,27 @@
       "price": 4500,
       "compareAtPrice": 5200,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&auto=format&fit=crop&q=80", "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Premium cotton dress shirt with tailored fit. Perfect for business meetings and formal events. Features a button-down collar, reinforced stitching, and breathable fabric. Available in multiple colors.",
-      "sizes": ["S", "M", "L", "XL", "XXL"],
-      "colors": ["White", "Blue", "Light Blue"],
-      "tags": ["New", "Best Seller"],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "White",
+        "Blue",
+        "Light Blue"
+      ],
+      "tags": [
+        "New",
+        "Best Seller"
+      ],
       "rating": 4.8,
       "reviewsCount": 127
     },
@@ -24,11 +40,25 @@
       "price": 3800,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Modern slim fit chinos crafted from breathable cotton twill. Features a mid-rise waist, clean front styling, and comfortable stretch. Perfect for casual office wear or weekend outings.",
-      "sizes": ["30x32", "32x32", "34x32", "36x32", "38x32"],
-      "colors": ["Khaki", "Navy", "Charcoal"],
-      "tags": ["Popular"],
+      "sizes": [
+        "30x32",
+        "32x32",
+        "34x32",
+        "36x32",
+        "38x32"
+      ],
+      "colors": [
+        "Khaki",
+        "Navy",
+        "Charcoal"
+      ],
+      "tags": [
+        "Popular"
+      ],
       "rating": 4.6,
       "reviewsCount": 89
     },
@@ -40,11 +70,25 @@
       "price": 12500,
       "compareAtPrice": 14500,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Elegant wool blend blazer with notch lapels and fully lined interior. Perfect for professional settings and evening events. Premium craftsmanship with hand-finished details.",
-      "sizes": ["38S", "40R", "42R", "44R", "46R"],
-      "colors": ["Navy", "Charcoal", "Taupe"],
-      "tags": ["Sale"],
+      "sizes": [
+        "38S",
+        "40R",
+        "42R",
+        "44R",
+        "46R"
+      ],
+      "colors": [
+        "Navy",
+        "Charcoal",
+        "Taupe"
+      ],
+      "tags": [
+        "Sale"
+      ],
       "rating": 4.9,
       "reviewsCount": 45
     },
@@ -56,10 +100,22 @@
       "price": 2200,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1558011175-08c598a97908?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1558011175-08c598a97908?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Relaxed fit cotton polo with breathable pique fabric. Features a three-button placket and embroidered logo detail. Ideal for casual weekends or outdoor activities.",
-      "sizes": ["S", "M", "L", "XL"],
-      "colors": ["White", "Black", "Navy", "Olive"],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        "White",
+        "Black",
+        "Navy",
+        "Olive"
+      ],
       "tags": [],
       "rating": 4.5,
       "reviewsCount": 203
@@ -72,11 +128,23 @@
       "price": 28500,
       "compareAtPrice": 32000,
       "inStock": false,
-      "images": ["https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Two-piece tailored suit in premium navy wool. Includes matching jacket and trousers with side adjusters. Made with 100% virgin wool for superior quality and comfort.",
-      "sizes": ["38R", "40R", "42R", "44R"],
-      "colors": ["Navy", "Charcoal"],
-      "tags": ["Coming Soon"],
+      "sizes": [
+        "38R",
+        "40R",
+        "42R",
+        "44R"
+      ],
+      "colors": [
+        "Navy",
+        "Charcoal"
+      ],
+      "tags": [
+        "Coming Soon"
+      ],
       "rating": 4.7,
       "reviewsCount": 12
     },
@@ -88,10 +156,19 @@
       "price": 1800,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1604147495798-57beb5d6af73?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1604147495798-57beb5d6af73?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Full-grain leather belt with brass buckle. Genuine leather construction ensures durability and develops unique character over time. Timeless accessory for any wardrobe.",
-      "sizes": ["Small (85cm)", "Medium (90cm)", "Large (95cm)"],
-      "colors": ["Brown", "Black"],
+      "sizes": [
+        "Small (85cm)",
+        "Medium (90cm)",
+        "Large (95cm)"
+      ],
+      "colors": [
+        "Brown",
+        "Black"
+      ],
       "tags": [],
       "rating": 4.8,
       "reviewsCount": 156
@@ -104,11 +181,28 @@
       "price": 6800,
       "compareAtPrice": 7900,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1595777707802-21b287d3f2ff?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1595777707802-21b287d3f2ff?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Graceful emerald maxi dress with flowing fabric. Features delicate lace detailing and a flattering silhouette. Perfect for formal events, weddings, and special occasions.",
-      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
-      "colors": ["Emerald", "Navy", "Black", "Rose"],
-      "tags": ["New", "Best Seller"],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "Emerald",
+        "Navy",
+        "Black",
+        "Rose"
+      ],
+      "tags": [
+        "New",
+        "Best Seller"
+      ],
       "rating": 4.9,
       "reviewsCount": 187
     },
@@ -120,10 +214,23 @@
       "price": 3200,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Beautiful modest blouse with elegant ruffled sleeves and a classic fit. Made from breathable cotton-linen blend. Perfect for layering or wearing alone.",
-      "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["White", "Blush", "Lavender", "Sage"],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        "White",
+        "Blush",
+        "Lavender",
+        "Sage"
+      ],
       "tags": [],
       "rating": 4.7,
       "reviewsCount": 94
@@ -136,11 +243,25 @@
       "price": 2900,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1582142407261-cb835faf6bcc?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1582142407261-cb835faf6bcc?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Elegant flowing midi skirt with beautiful floral print. Features an elastic waistband for comfort and a full length for modest wear. Ideal for casual or formal settings.",
-      "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["Floral Print", "Navy", "Cream"],
-      "tags": ["Sale"],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        "Floral Print",
+        "Navy",
+        "Cream"
+      ],
+      "tags": [
+        "Sale"
+      ],
       "rating": 4.6,
       "reviewsCount": 71
     },
@@ -152,10 +273,23 @@
       "price": 2500,
       "compareAtPrice": 3100,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1572986773206-676b8a40bcb5?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1572986773206-676b8a40bcb5?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Comfortable long sleeve turtle neck made from premium cotton knit. Perfect for layering or wearing alone. Available in classic colors that match any wardrobe.",
-      "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["Black", "White", "Camel", "Navy"],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        "Black",
+        "White",
+        "Camel",
+        "Navy"
+      ],
       "tags": [],
       "rating": 4.8,
       "reviewsCount": 142
@@ -168,11 +302,27 @@
       "price": 4200,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1587003950620-eeb8665e4f3f?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1587003950620-eeb8665e4f3f?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Luxurious cardigan sweater in soft taupe. Features button closures, practical pockets, and a relaxed fit. Perfect for adding warmth and style to any outfit.",
-      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
-      "colors": ["Taupe", "Cream", "Charcoal", "Blush"],
-      "tags": ["New"],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "Taupe",
+        "Cream",
+        "Charcoal",
+        "Blush"
+      ],
+      "tags": [
+        "New"
+      ],
       "rating": 4.7,
       "reviewsCount": 58
     },
@@ -184,11 +334,26 @@
       "price": 2200,
       "compareAtPrice": 2800,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1519340241574-2cdc8adff4e9?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1519340241574-2cdc8adff4e9?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Adorable blue dress perfect for young girls. Features a comfortable fit, durable fabric, and modest design. Easy to care for and available in multiple sizes for growing kids.",
-      "sizes": ["2-3Y", "4-5Y", "6-7Y", "8-9Y", "10-11Y"],
-      "colors": ["Blue", "Pink", "Purple", "Green"],
-      "tags": ["Popular"],
+      "sizes": [
+        "2-3Y",
+        "4-5Y",
+        "6-7Y",
+        "8-9Y",
+        "10-11Y"
+      ],
+      "colors": [
+        "Blue",
+        "Pink",
+        "Purple",
+        "Green"
+      ],
+      "tags": [
+        "Popular"
+      ],
       "rating": 4.9,
       "reviewsCount": 203
     },
@@ -200,10 +365,24 @@
       "price": 1200,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1503919545889-6f7ee89e1c31?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1503919545889-6f7ee89e1c31?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Soft cotton t-shirt for kids with fun designs. Made from organic cotton for comfort and durability. Perfect for everyday wear.",
-      "sizes": ["2-3Y", "4-5Y", "6-7Y", "8-9Y", "10-11Y", "12-13Y"],
-      "colors": ["White", "Navy", "Red", "Yellow"],
+      "sizes": [
+        "2-3Y",
+        "4-5Y",
+        "6-7Y",
+        "8-9Y",
+        "10-11Y",
+        "12-13Y"
+      ],
+      "colors": [
+        "White",
+        "Navy",
+        "Red",
+        "Yellow"
+      ],
       "tags": [],
       "rating": 4.6,
       "reviewsCount": 175
@@ -216,11 +395,25 @@
       "price": 1500,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1519238263561-ed4c67851c0f?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1519238263561-ed4c67851c0f?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Comfortable navy shorts for kids. Features an elastic waistband, pockets, and breathable fabric. Perfect for active play and outdoor adventures.",
-      "sizes": ["2-3Y", "4-5Y", "6-7Y", "8-9Y", "10-11Y"],
-      "colors": ["Navy", "Khaki", "Black"],
-      "tags": ["Sale"],
+      "sizes": [
+        "2-3Y",
+        "4-5Y",
+        "6-7Y",
+        "8-9Y",
+        "10-11Y"
+      ],
+      "colors": [
+        "Navy",
+        "Khaki",
+        "Black"
+      ],
+      "tags": [
+        "Sale"
+      ],
       "rating": 4.7,
       "reviewsCount": 89
     },
@@ -232,11 +425,25 @@
       "price": 2000,
       "compareAtPrice": 2600,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Cozy cream sweater perfect for layering. Made from soft knit fabric that's gentle on delicate skin. Ideal for cooler seasons.",
-      "sizes": ["2-3Y", "4-5Y", "6-7Y", "8-9Y", "10-11Y"],
-      "colors": ["Cream", "Grey", "Navy"],
-      "tags": ["New"],
+      "sizes": [
+        "2-3Y",
+        "4-5Y",
+        "6-7Y",
+        "8-9Y",
+        "10-11Y"
+      ],
+      "colors": [
+        "Cream",
+        "Grey",
+        "Navy"
+      ],
+      "tags": [
+        "New"
+      ],
       "rating": 4.8,
       "reviewsCount": 67
     },
@@ -248,11 +455,15 @@
       "price": 1500,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1507842217343-583f20270319?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Modern edition SDA Hymnal with contemporary and classic hymns. Hardcover binding with gold embossing. Perfect for personal worship or church use.",
       "pages": 500,
       "language": "English",
-      "tags": ["Best Seller"],
+      "tags": [
+        "Best Seller"
+      ],
       "rating": 4.9,
       "reviewsCount": 247
     },
@@ -264,11 +475,16 @@
       "price": 2200,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Classic spiritual literature exploring the conflict between good and evil. Comprehensive guide for understanding biblical prophecy and church history. Essential reading for SDA members.",
       "pages": 680,
       "language": "English",
-      "tags": ["New", "Popular"],
+      "tags": [
+        "New",
+        "Popular"
+      ],
       "rating": 4.8,
       "reviewsCount": 156
     },
@@ -280,7 +496,9 @@
       "price": 1800,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1507842217343-583f20270319?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Inspirational guide to spiritual transformation and Christian living. Beautiful hardcover edition with quality binding. Perfect gift for spiritual seekers.",
       "pages": 400,
       "language": "English",
@@ -296,11 +514,15 @@
       "price": 1200,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Illustrated collection of Bible stories for children. Colorful illustrations and age-appropriate narratives. Perfect for teaching values and faith to young readers.",
       "pages": 320,
       "language": "English",
-      "tags": ["Popular"],
+      "tags": [
+        "Popular"
+      ],
       "rating": 4.9,
       "reviewsCount": 189
     },
@@ -312,11 +534,16 @@
       "price": 2500,
       "compareAtPrice": 3000,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1514995285275-3f03e3e90ca3?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1514995285275-3f03e3e90ca3?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Comprehensive account of the life of Jesus Christ. Beautiful leather-bound edition with gold details. Essential spiritual reference for deeper understanding of scripture.",
       "pages": 800,
       "language": "English",
-      "tags": ["Sale", "Best Seller"],
+      "tags": [
+        "Sale",
+        "Best Seller"
+      ],
       "rating": 4.9,
       "reviewsCount": 213
     },
@@ -328,11 +555,15 @@
       "price": 900,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1507842217343-583f20270319?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Practical daily devotional with Bible passages and reflections. Compact size perfect for carrying. Helps develop consistent spiritual growth habits.",
       "pages": 365,
       "language": "English",
-      "tags": ["New"],
+      "tags": [
+        "New"
+      ],
       "rating": 4.6,
       "reviewsCount": 78
     },
@@ -344,11 +575,25 @@
       "price": 3500,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1608749954927-70f4b7f3e1ff?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1608749954927-70f4b7f3e1ff?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Breathable linen shirt perfect for warm weather. Relaxed fit with natural texture. Ideal for casual vacation wear or hot climate dressing.",
-      "sizes": ["S", "M", "L", "XL", "XXL"],
-      "colors": ["Beige", "White", "Light Blue"],
-      "tags": ["New"],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "Beige",
+        "White",
+        "Light Blue"
+      ],
+      "tags": [
+        "New"
+      ],
       "rating": 4.7,
       "reviewsCount": 102
     },
@@ -360,11 +605,25 @@
       "price": 3800,
       "compareAtPrice": 4500,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1571268633221-0dfb1c1a0e0d?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1571268633221-0dfb1c1a0e0d?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Classic black pencil skirt with a sleek silhouette. Features a zipper back and elasticized waist for comfort. Perfect for professional office wear.",
-      "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["Black", "Navy", "Charcoal"],
-      "tags": ["Popular"],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        "Black",
+        "Navy",
+        "Charcoal"
+      ],
+      "tags": [
+        "Popular"
+      ],
       "rating": 4.8,
       "reviewsCount": 145
     },
@@ -376,10 +635,18 @@
       "price": 4500,
       "compareAtPrice": 5500,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Elegant vegan leather handbag with sustainable materials. Spacious interior with multiple compartments. Perfect everyday bag with eco-conscious style.",
-      "colors": ["Black", "Brown", "Camel"],
-      "tags": ["Eco-Friendly"],
+      "colors": [
+        "Black",
+        "Brown",
+        "Camel"
+      ],
+      "tags": [
+        "Eco-Friendly"
+      ],
       "rating": 4.7,
       "reviewsCount": 93
     },
@@ -391,11 +658,17 @@
       "price": 800,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Delicate gold-plated necklace with religious pendant. Perfect gift for children. Safe and durable for daily wear.",
       "material": "Gold-plated",
-      "colors": ["Gold"],
-      "tags": ["New"],
+      "colors": [
+        "Gold"
+      ],
+      "tags": [
+        "New"
+      ],
       "rating": 4.9,
       "reviewsCount": 67
     },
@@ -407,11 +680,28 @@
       "price": 7500,
       "compareAtPrice": 9000,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1595777707802-21b287d3f2ff?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1595777707802-21b287d3f2ff?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Stunning formal dress for weddings and special events. Features elegant draping and modest silhouette. Available in multiple colors.",
-      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
-      "colors": ["Blush Pink", "Lavender", "Navy", "Charcoal"],
-      "tags": ["Sale", "New"],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "Blush Pink",
+        "Lavender",
+        "Navy",
+        "Charcoal"
+      ],
+      "tags": [
+        "Sale",
+        "New"
+      ],
       "rating": 4.9,
       "reviewsCount": 118
     },
@@ -423,11 +713,27 @@
       "price": 5200,
       "compareAtPrice": 6500,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1543163521-9145f4c6446c?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1543163521-9145f4c6446c?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Premium leather Oxford shoes with classic design. Comfortable cushioned insole and durable sole. Perfect for business or formal occasions.",
-      "sizes": ["7", "8", "9", "10", "11", "12", "13"],
-      "colors": ["Black", "Brown", "Burgundy"],
-      "tags": ["Best Seller"],
+      "sizes": [
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "colors": [
+        "Black",
+        "Brown",
+        "Burgundy"
+      ],
+      "tags": [
+        "Best Seller"
+      ],
       "rating": 4.8,
       "reviewsCount": 167
     },
@@ -439,11 +745,15 @@
       "price": 1100,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1507842217343-583f20270319?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Beautiful guided journal for spiritual reflection and prayer. Includes prompts for meditation and gratitude practice. Premium paper and elegant binding.",
       "pages": 200,
       "language": "English",
-      "tags": ["New"],
+      "tags": [
+        "New"
+      ],
       "rating": 4.8,
       "reviewsCount": 56
     },
@@ -455,11 +765,26 @@
       "price": 2800,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1564331321e10e8f9e7d15c20f5c5de5f8e5c8e8?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1564331321e10e8f9e7d15c20f5c5de5f8e5c8e8?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Stylish layered top with multiple sleeve options. Versatile design perfect for year-round wear. Mix and match with any bottom.",
-      "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["White", "Black", "Grey", "Navy"],
-      "tags": ["Popular"],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        "White",
+        "Black",
+        "Grey",
+        "Navy"
+      ],
+      "tags": [
+        "Popular"
+      ],
       "rating": 4.6,
       "reviewsCount": 81
     },
@@ -471,365 +796,1333 @@
       "price": 1200,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1557529316-feaee2b2e338?w=800&auto=format&fit=crop&q=80"],
+      "images": [
+        "https://images.unsplash.com/photo-1557529316-feaee2b2e338?w=800&auto=format&fit=crop&q=80"
+      ],
       "description": "Pack of 5 premium dress socks in assorted colors. Soft merino wool blend for comfort and durability. Perfect complement to any formal outfit.",
       "quantity": 5,
-      "colors": ["Multi-color"],
-      "tags": ["Value Pack"],
+      "colors": [
+        "Multi-color"
+      ],
+      "tags": [
+        "Value Pack"
+      ],
       "rating": 4.7,
       "reviewsCount": 124
-    }
-  ]
-}
-      "name": "Silk Tie Collection",
-      "category": "clothes",
-      "subcategory": "men",
-      "price": 1500,
-      "compareAtPrice": 1800,
-      "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1580825312477-1b289fe81465?w=600&auto=format&fit=crop"],
-      "description": "Set of 3 silk ties in classic patterns. Features pure silk construction with hand-rolled edges.",
-      "sizes": ["Standard"],
-      "colors": ["Navy Paisley", "Burgundy Solid", "Silver Stripe"],
-      "tags": ["Set"],
-      "rating": 4.4,
-      "reviewsCount": 67
     },
     {
-      "id": 8,
-      "name": "Summer Linen Shirt",
+      "id": 31,
+      "name": "Classic Fit Formal Shirt",
       "category": "clothes",
       "subcategory": "men",
-      "price": 3200,
+      "price": 4500,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1529984790224-711db962796c?w=600&auto=format&fit=crop"],
-      "description": "Lightweight linen shirt perfect for warm weather. Features a relaxed fit and breathable natural fibers.",
-      "sizes": ["M", "L", "XL", "XXL"],
-      "colors": ["Natural", "Sky Blue", "Sage"],
-      "tags": ["Seasonal"],
-      "rating": 4.7,
-      "reviewsCount": 98
-    },
-    {
-      "id": 9,
-      "name": "Womens Blazer - Black",
-      "category": "clothes",
-      "subcategory": "women",
-      "price": 11500,
-      "compareAtPrice": 13500,
-      "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format&fit=crop"],
-      "description": "Tailored women's blazer with single-button closure. Features a flattering fit with shoulder pads for structure.",
-      "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["Black", "White", "Burgundy"],
-      "tags": ["Best Seller"],
+      "images": [
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400"
+      ],
+      "description": "A classic fit formal shirt perfect for everyday use.",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        "White",
+        "Blue",
+        "Gray"
+      ],
+      "tags": [
+        "New"
+      ],
       "rating": 4.9,
-      "reviewsCount": 234
+      "reviewsCount": 1062
     },
     {
-      "id": 10,
-      "name": "Floral Summer Dress",
+      "id": 32,
+      "name": "Premium Oxford Shirt",
       "category": "clothes",
-      "subcategory": "women",
+      "subcategory": "men",
       "price": 5500,
-      "compareAtPrice": 6200,
-      "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&auto=format&fit=crop"],
-      "description": "Knee-length floral dress with smocked bodice. Features adjustable straps and an elastic waist for comfort.",
-      "sizes": ["XS", "S", "M", "L"],
-      "colors": ["Blue Floral", "Pink Floral", "Yellow Floral"],
-      "tags": ["Summer"],
-      "rating": 4.6,
-      "reviewsCount": 178
-    },
-    {
-      "id": 11,
-      "name": "High-Waisted Trousers",
-      "category": "clothes",
-      "subcategory": "women",
-      "price": 4200,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&auto=format&fit=crop"],
-      "description": "High-waisted wide-leg trousers with a flowing silhouette. Crafted from lightweight crepe fabric.",
-      "sizes": ["24", "26", "28", "30", "32"],
-      "colors": ["Black", "Beige", "Navy"],
-      "tags": ["New"],
-      "rating": 4.5,
-      "reviewsCount": 112
+      "images": [
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400"
+      ],
+      "description": "A premium oxford shirt perfect for everyday use.",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "White",
+        "Light Blue",
+        "Navy"
+      ],
+      "tags": [],
+      "rating": 3.1,
+      "reviewsCount": 1868
     },
     {
-      "id": 12,
-      "name": "Cashmere Blend Cardigan",
+      "id": 33,
+      "name": "Cotton Chino Shorts",
       "category": "clothes",
-      "subcategory": "women",
-      "price": 8900,
-      "compareAtPrice": 9800,
+      "subcategory": "men",
+      "price": 2800,
+      "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format&fit=crop"],
-      "description": "Soft cashmere blend cardigan with open front design. Features dropped shoulders and ribbed cuffs.",
-      "sizes": ["XS", "S", "M", "L"],
-      "colors": ["Cream", "Charcoal", "Dusty Pink"],
+      "images": [
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400"
+      ],
+      "description": "A cotton chino shorts perfect for everyday use.",
+      "sizes": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "colors": [
+        "Khaki",
+        "Navy",
+        "Black"
+      ],
       "tags": [],
       "rating": 4.8,
-      "reviewsCount": 87
+      "reviewsCount": 212
     },
     {
-      "id": 13,
-      "name": "Women's Silk Blouse",
+      "id": 34,
+      "name": "Wool Blend Sweater Vest - Extra Long Name For Layout Testing",
       "category": "clothes",
-      "subcategory": "women",
+      "subcategory": "men",
       "price": 6500,
-      "compareAtPrice": 7200,
+      "compareAtPrice": 7800,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1590755295572-b693cf030c57?w=600&auto=format&fit=crop"],
-      "description": "Elegant silk blouse with V-neckline and three-quarter sleeves. Features a tie detail at the neck.",
-      "sizes": ["XS", "S", "M", "L", "XL"],
-      "colors": ["Ivory", "Black", "Emerald"],
-      "tags": ["Luxury"],
-      "rating": 4.7,
-      "reviewsCount": 145
+      "images": [
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400"
+      ],
+      "description": "A wool blend sweater vest - extra long name for layout testing perfect for everyday use.",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        "Gray",
+        "Navy",
+        "Burgundy"
+      ],
+      "tags": [
+        "Sale"
+      ],
+      "rating": 3.6,
+      "reviewsCount": 1117
     },
     {
-      "id": 14,
-      "name": "Denim Skirt - A-Line",
+      "id": 35,
+      "name": "Leather Loafer Shoes",
+      "category": "clothes",
+      "subcategory": "men",
+      "price": 8500,
+      "compareAtPrice": null,
+      "inStock": false,
+      "images": [
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400"
+      ],
+      "description": "A leather loafer shoes perfect for everyday use.",
+      "sizes": [
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "colors": [
+        "Black",
+        "Brown"
+      ],
+      "tags": [
+        "Sale"
+      ],
+      "rating": 3.4,
+      "reviewsCount": 900
+    },
+    {
+      "id": 36,
+      "name": "Denim Jacket - Vintage Wash",
+      "category": "clothes",
+      "subcategory": "men",
+      "price": 7500,
+      "compareAtPrice": null,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400"
+      ],
+      "description": "This is an exceptionally long description that tests how the layout handles very verbose product descriptions. It includes multiple sentences and even some HTML entities like &amp; &lt; &gt; to ensure proper escaping and rendering. The text should wrap nicely across different screen sizes and demonstrate how the UI adapts to content of varying lengths.\n\nAdditional details about quality, materials, and care instructions go here to make this a truly comprehensive test case for description rendering.",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        "Blue",
+        "Black",
+        "Gray"
+      ],
+      "tags": [
+        "Popular"
+      ],
+      "rating": 4.1,
+      "reviewsCount": 1185
+    },
+    {
+      "id": 37,
+      "name": "Silk Knit Tie",
+      "category": "clothes",
+      "subcategory": "men",
+      "price": 1900,
+      "compareAtPrice": 2280,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400"
+      ],
+      "description": "This is an exceptionally long description that tests how the layout handles very verbose product descriptions. It includes multiple sentences and even some HTML entities like &amp; &lt; &gt; to ensure proper escaping and rendering. The text should wrap nicely across different screen sizes and demonstrate how the UI adapts to content of varying lengths.\n\nAdditional details about quality, materials, and care instructions go here to make this a truly comprehensive test case for description rendering.",
+      "sizes": [
+        "One Size"
+      ],
+      "colors": [
+        "Navy",
+        "Burgundy",
+        "Gold"
+      ],
+      "tags": [
+        "New"
+      ],
+      "rating": 4.7,
+      "reviewsCount": 70
+    },
+    {
+      "id": 38,
+      "name": "Men's Wool Overcoat",
+      "category": "clothes",
+      "subcategory": "men",
+      "price": 12000,
+      "compareAtPrice": null,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400"
+      ],
+      "description": "A men's wool overcoat perfect for everyday use.",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        "Black",
+        "Gray",
+        "Navy"
+      ],
+      "tags": [],
+      "rating": 3.1,
+      "reviewsCount": 548
+    },
+    {
+      "id": 39,
+      "name": "Satin Blouse - Ivory",
       "category": "clothes",
       "subcategory": "women",
       "price": 3200,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?w=600&auto=format&fit=crop"],
-      "description": "Classic A-line denim skirt with button front. Features a mid-rise waist and clean styling.",
-      "sizes": ["24", "26", "28", "30"],
-      "colors": ["Light Wash", "Medium Wash", "Dark Wash"],
+      "images": [
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400"
+      ],
+      "description": "A satin blouse - ivory perfect for everyday use.",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "colors": [
+        "Ivory",
+        "Black",
+        "Navy"
+      ],
       "tags": [],
-      "rating": 4.3,
-      "reviewsCount": 76
+      "rating": 4.2,
+      "reviewsCount": 1704
     },
     {
-      "id": 15,
-      "name": "Womens Leather Jacket",
+      "id": 40,
+      "name": "A-Line Midi Skirt",
       "category": "clothes",
       "subcategory": "women",
-      "price": 18500,
-      "compareAtPrice": 21000,
-      "inStock": false,
-      "images": ["https://images.unsplash.com/photo-1558101740-ef0ca542e387?w=600&auto=format&fit=crop"],
-      "description": "Classic biker-style leather jacket with zippered front. Features zippered pockets and a belted waist.",
-      "sizes": ["XS", "S", "M", "L"],
-      "colors": ["Black", "Brown"],
-      "tags": ["Sale"],
+      "price": 2500,
+      "compareAtPrice": null,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400"
+      ],
+      "description": "This is an exceptionally long description that tests how the layout handles very verbose product descriptions. It includes multiple sentences and even some HTML entities like &amp; &lt; &gt; to ensure proper escaping and rendering. The text should wrap nicely across different screen sizes and demonstrate how the UI adapts to content of varying lengths.\n\nAdditional details about quality, materials, and care instructions go here to make this a truly comprehensive test case for description rendering.",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "colors": [
+        "Black",
+        "Navy",
+        "Burgundy"
+      ],
+      "tags": [
+        "Popular"
+      ],
       "rating": 4.9,
-      "reviewsCount": 56
+      "reviewsCount": 1718
     },
     {
-      "id": 16,
-      "name": "Kids Cotton T-Shirt",
+      "id": 41,
+      "name": "High-Waisted Jeans",
       "category": "clothes",
-      "subcategory": "children",
+      "subcategory": "women",
+      "price": 3800,
+      "compareAtPrice": 4560,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400"
+      ],
+      "description": "A high-waisted jeans perfect for everyday use.",
+      "sizes": [
+        "24",
+        "26",
+        "28",
+        "30",
+        "32"
+      ],
+      "colors": [
+        "Blue",
+        "Black",
+        "Gray"
+      ],
+      "tags": [
+        "New"
+      ],
+      "rating": 4.6,
+      "reviewsCount": 964
+    },
+    {
+      "id": 42,
+      "name": "Cashmere Scarf",
+      "category": "clothes",
+      "subcategory": "women",
+      "price": 2800,
+      "compareAtPrice": null,
+      "inStock": false,
+      "images": [
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400"
+      ],
+      "description": "This is an exceptionally long description that tests how the layout handles very verbose product descriptions. It includes multiple sentences and even some HTML entities like &amp; &lt; &gt; to ensure proper escaping and rendering. The text should wrap nicely across different screen sizes and demonstrate how the UI adapts to content of varying lengths.\n\nAdditional details about quality, materials, and care instructions go here to make this a truly comprehensive test case for description rendering.",
+      "sizes": [
+        "One Size"
+      ],
+      "colors": [
+        "Gray",
+        "Navy",
+        "Cream"
+      ],
+      "tags": [],
+      "rating": 3.9,
+      "reviewsCount": 1515
+    },
+    {
+      "id": 43,
+      "name": "Wrap Dress - Floral",
+      "category": "clothes",
+      "subcategory": "women",
+      "price": 4500,
+      "compareAtPrice": 5400,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400"
+      ],
+      "description": "A wrap dress - floral perfect for everyday use.",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "colors": [
+        "Floral",
+        "Solid Black"
+      ],
+      "tags": [],
+      "rating": 4.1,
+      "reviewsCount": 762
+    },
+    {
+      "id": 44,
+      "name": "Tailored Blazer - Navy",
+      "category": "clothes",
+      "subcategory": "women",
+      "price": 5200,
+      "compareAtPrice": 6240,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400"
+      ],
+      "description": "A tailored blazer - navy perfect for everyday use.",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "colors": [
+        "Navy",
+        "Black",
+        "Gray"
+      ],
+      "tags": [
+        "Sale"
+      ],
+      "rating": 4.3,
+      "reviewsCount": 285
+    },
+    {
+      "id": 45,
+      "name": "Ankle Boots - Leather",
+      "category": "clothes",
+      "subcategory": "women",
+      "price": 4200,
+      "compareAtPrice": 5040,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400"
+      ],
+      "description": "A ankle boots - leather perfect for everyday use.",
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "colors": [
+        "Black",
+        "Brown"
+      ],
+      "tags": [
+        "Popular"
+      ],
+      "rating": 4,
+      "reviewsCount": 889
+    },
+    {
+      "id": 46,
+      "name": "Wide-Leg Trousers",
+      "category": "clothes",
+      "subcategory": "women",
+      "price": 3500,
+      "compareAtPrice": 4200,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400"
+      ],
+      "description": "A wide-leg trousers perfect for everyday use.",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "colors": [
+        "Black",
+        "Gray",
+        "Navy"
+      ],
+      "tags": [],
+      "rating": 4.5,
+      "reviewsCount": 1754
+    },
+    {
+      "id": 47,
+      "name": "Knit Beanie - Wool",
+      "category": "clothes",
+      "subcategory": "women",
       "price": 1500,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?w=600&auto=format&fit=crop"],
-      "description": "Soft cotton t-shirt for kids with playful prints. Features reinforced seams for durability.",
-      "sizes": ["2T", "3T", "4T", "5/6", "7/8"],
-      "colors": ["Red", "Blue", "Yellow", "Green"],
-      "tags": [],
-      "rating": 4.5,
-      "reviewsCount": 234
-    },
-    {
-      "id": 17,
-      "name": "Kids Denim Overalls",
-      "category": "clothes",
-      "subcategory": "children",
-      "price": 3500,
-      "compareAtPrice": null,
-      "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?w=600&auto=format&fit=crop"],
-      "description": "Classic denim overalls with adjustable straps. Features front pockets and button closure.",
-      "sizes": ["12M", "18M", "2T", "3T", "4T"],
-      "colors": ["Light Blue", "Dark Blue", "Black"],
-      "tags": ["Bestselling"],
-      "rating": 4.7,
-      "reviewsCount": 123
-    },
-    {
-      "id": 18,
-      "name": "Kids Hooded Sweatshirt",
-      "category": "clothes",
-      "subcategory": "children",
-      "price": 2800,
-      "compareAtPrice": 3200,
-      "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?w=600&auto=format&fit=crop"],
-      "description": "Warm fleece hoodie with kangaroo pocket. Features ribbed cuffs and hem for a snug fit.",
-      "sizes": ["XS", "S", "M", "L"],
-      "colors": ["Navy", "Red", "Grey", "Pink"],
-      "tags": ["Sale"],
-      "rating": 4.6,
-      "reviewsCount": 98
-    },
-    {
-      "id": 19,
-      "name": "Kids Sneakers",
-      "category": "clothes",
-      "subcategory": "children",
-      "price": 4200,
-      "compareAtPrice": null,
-      "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=600&auto=format&fit=crop"],
-      "description": "Lightweight canvas sneakers with rubber sole. Features easy slip-on design with elastic laces.",
-      "sizes": ["18", "19", "20", "21", "22", "23", "24", "25"],
-      "colors": ["White", "Black", "Blue", "Pink"],
+      "images": [
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400"
+      ],
+      "description": "A knit beanie - wool perfect for everyday use.",
+      "sizes": [
+        "One Size"
+      ],
+      "colors": [
+        "Gray",
+        "Navy",
+        "Burgundy"
+      ],
       "tags": [],
       "rating": 4.4,
-      "reviewsCount": 167
+      "reviewsCount": 727
     },
     {
-      "id": 20,
-      "name": "The Great Adventure",
-      "category": "books",
-      "subcategory": "fiction",
-      "price": 1800,
-      "compareAtPrice": 2200,
+      "id": 48,
+      "name": "Silk Camisole Top",
+      "category": "clothes",
+      "subcategory": "women",
+      "price": 2200,
+      "compareAtPrice": null,
+      "inStock": false,
+      "images": [
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400"
+      ],
+      "description": "A silk camisole top perfect for everyday use.",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "colors": [
+        "Ivory",
+        "Black",
+        "Red"
+      ],
+      "tags": [
+        "New"
+      ],
+      "rating": 4,
+      "reviewsCount": 1752
+    },
+    {
+      "id": 49,
+      "name": "Boys Dinosaur Pajamas",
+      "category": "clothes",
+      "subcategory": "children",
+      "price": 1200,
+      "compareAtPrice": 1440,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&auto=format&fit=crop"],
-      "description": "An epic adventure story following a young explorer's journey across uncharted lands. Filled with mystery, courage, and wonder.",
-      "sizes": null,
-      "colors": null,
-      "tags": ["Bestseller", "New Arrival"],
-      "rating": 4.8,
-      "reviewsCount": 342
+      "images": [
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400"
+      ],
+      "description": "A boys dinosaur pajamas perfect for everyday use.",
+      "sizes": [
+        "2-3",
+        "4-5",
+        "6-7",
+        "8-9"
+      ],
+      "colors": [
+        "Blue",
+        "Green",
+        "Red"
+      ],
+      "tags": [
+        "Sale"
+      ],
+      "rating": 4.9,
+      "reviewsCount": 813
     },
     {
-      "id": 21,
-      "name": "Mystery at the Manor",
+      "id": 50,
+      "name": "Girls Floral Dress",
+      "category": "clothes",
+      "subcategory": "children",
+      "price": 1800,
+      "compareAtPrice": 2160,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400"
+      ],
+      "description": "A girls floral dress perfect for everyday use.",
+      "sizes": [
+        "2-3",
+        "4-5",
+        "6-7"
+      ],
+      "colors": [
+        "Pink",
+        "Yellow",
+        "Purple"
+      ],
+      "tags": [
+        "Popular"
+      ],
+      "rating": 4.4,
+      "reviewsCount": 51
+    },
+    {
+      "id": 51,
+      "name": "Kids Rain Jacket",
+      "category": "clothes",
+      "subcategory": "children",
+      "price": 1500,
+      "compareAtPrice": null,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400"
+      ],
+      "description": "A kids rain jacket perfect for everyday use.",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "colors": [
+        "Yellow",
+        "Blue",
+        "Red"
+      ],
+      "tags": [],
+      "rating": 3.3,
+      "reviewsCount": 1732
+    },
+    {
+      "id": 52,
+      "name": "Children's Wool Socks (3-pack)",
+      "category": "clothes",
+      "subcategory": "children",
+      "price": 800,
+      "compareAtPrice": null,
+      "inStock": false,
+      "images": [
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400"
+      ],
+      "description": "A children's wool socks (3-pack) perfect for everyday use.",
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "colors": [
+        "White",
+        "Gray",
+        "Navy"
+      ],
+      "tags": [],
+      "rating": 4.1,
+      "reviewsCount": 676
+    },
+    {
+      "id": 53,
+      "name": "Toddler Sneakers - Light Up",
+      "category": "clothes",
+      "subcategory": "children",
+      "price": 2500,
+      "compareAtPrice": null,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400"
+      ],
+      "description": "A toddler sneakers - light up perfect for everyday use.",
+      "sizes": [
+        "18",
+        "19",
+        "20",
+        "21",
+        "22"
+      ],
+      "colors": [
+        "White",
+        "Blue",
+        "Pink"
+      ],
+      "tags": [],
+      "rating": 4.6,
+      "reviewsCount": 128
+    },
+    {
+      "id": 54,
+      "name": "Kids Sun Hat",
+      "category": "clothes",
+      "subcategory": "children",
+      "price": 900,
+      "compareAtPrice": null,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400"
+      ],
+      "description": "A kids sun hat perfect for everyday use.",
+      "sizes": [
+        "One Size"
+      ],
+      "colors": [
+        "Pink",
+        "Blue",
+        "Green"
+      ],
+      "tags": [
+        "Popular"
+      ],
+      "rating": 4.4,
+      "reviewsCount": 789
+    },
+    {
+      "id": 55,
+      "name": "Baby Onesie - Set of 3",
+      "category": "clothes",
+      "subcategory": "children",
+      "price": 1200,
+      "compareAtPrice": 1440,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400"
+      ],
+      "description": "A baby onesie - set of 3 perfect for everyday use.",
+      "sizes": [
+        "0-3m",
+        "3-6m",
+        "6-9m"
+      ],
+      "colors": [
+        "White",
+        "Yellow",
+        "Green"
+      ],
+      "tags": [],
+      "rating": 2.8,
+      "reviewsCount": 1711
+    },
+    {
+      "id": 56,
+      "name": "Children's Backpack",
+      "category": "clothes",
+      "subcategory": "children",
+      "price": 3000,
+      "compareAtPrice": null,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400"
+      ],
+      "description": "A children's backpack perfect for everyday use.",
+      "sizes": [
+        "One Size"
+      ],
+      "colors": [
+        "Blue",
+        "Red",
+        "Black"
+      ],
+      "tags": [],
+      "rating": 4,
+      "reviewsCount": 1832
+    },
+    {
+      "id": 57,
+      "name": "SDA Hymnal - Pocket Edition",
+      "category": "books",
+      "subcategory": "spiritual",
+      "price": 800,
+      "compareAtPrice": null,
+      "inStock": false,
+      "images": [
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400"
+      ],
+      "description": "A sda hymnal - pocket edition perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [],
+      "rating": 2.6,
+      "reviewsCount": 1277,
+      "pages": 256,
+      "language": "English"
+    },
+    {
+      "id": 58,
+      "name": "Conflict of the Ages Series - Complete Set",
+      "category": "books",
+      "subcategory": "spiritual",
+      "price": 2800,
+      "compareAtPrice": null,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400"
+      ],
+      "description": "A conflict of the ages series - complete set perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [
+        "New"
+      ],
+      "rating": 4,
+      "reviewsCount": 1914,
+      "pages": 1200,
+      "language": "English"
+    },
+    {
+      "id": 59,
+      "name": "Prayer Warriors Handbook",
+      "category": "books",
+      "subcategory": "spiritual",
+      "price": 1800,
+      "compareAtPrice": 2160,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400"
+      ],
+      "description": "A prayer warriors handbook perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [
+        "New"
+      ],
+      "rating": 3.5,
+      "reviewsCount": 1579,
+      "pages": 320,
+      "language": "English"
+    },
+    {
+      "id": 60,
+      "name": "Bible Commentary - Genesis to Revelation",
+      "category": "books",
+      "subcategory": "spiritual",
+      "price": 2200,
+      "compareAtPrice": null,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400"
+      ],
+      "description": "A bible commentary - genesis to revelation perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [],
+      "rating": 2.7,
+      "reviewsCount": 533,
+      "pages": 800,
+      "language": "English"
+    },
+    {
+      "id": 61,
+      "name": "Christ's Object Lessons",
+      "category": "books",
+      "subcategory": "spiritual",
+      "price": 1200,
+      "compareAtPrice": null,
+      "inStock": false,
+      "images": [
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400"
+      ],
+      "description": "This is an exceptionally long description that tests how the layout handles very verbose product descriptions. It includes multiple sentences and even some HTML entities like &amp; &lt; &gt; to ensure proper escaping and rendering. The text should wrap nicely across different screen sizes and demonstrate how the UI adapts to content of varying lengths.\n\nAdditional details about quality, materials, and care instructions go here to make this a truly comprehensive test case for description rendering.",
+      "sizes": [],
+      "colors": [],
+      "tags": [],
+      "rating": 4.1,
+      "reviewsCount": 1091,
+      "pages": 192,
+      "language": "English"
+    },
+    {
+      "id": 62,
+      "name": "The Ministry of Healing",
+      "category": "books",
+      "subcategory": "spiritual",
+      "price": 1500,
+      "compareAtPrice": null,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400"
+      ],
+      "description": "A the ministry of healing perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [
+        "New"
+      ],
+      "rating": 4.6,
+      "reviewsCount": 1325,
+      "pages": 256,
+      "language": "English"
+    },
+    {
+      "id": 63,
+      "name": "The Faithful Shepherd",
       "category": "books",
       "subcategory": "fiction",
       "price": 1500,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&auto=format&fit=crop"],
-      "description": "A gripping whodunit set in an English country manor. Secrets, lies, and unexpected twists await on every page.",
-      "sizes": null,
-      "colors": null,
-      "tags": ["Bestseller"],
-      "rating": 4.6,
-      "reviewsCount": 198
+      "images": [
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400"
+      ],
+      "description": "A the faithful shepherd perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [
+        "New"
+      ],
+      "rating": 3.2,
+      "reviewsCount": 344,
+      "pages": 280,
+      "language": "English"
     },
     {
-      "id": 22,
-      "name": "Love Letters from Paris",
+      "id": 64,
+      "name": "Whispers of the Heart - A Christian Romance Novel",
       "category": "books",
       "subcategory": "fiction",
-      "price": 1200,
-      "compareAtPrice": 1500,
+      "price": 1300,
+      "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1495640388908-05fa85288e61?w=600&auto=format&fit=crop"],
-      "description": "A heartwarming romance spanning decades, told through letters exchanged between lovers in the City of Light.",
-      "sizes": null,
-      "colors": null,
+      "images": [
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400"
+      ],
+      "description": "A whispers of the heart - a christian romance novel perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
       "tags": [],
-      "rating": 4.7,
-      "reviewsCount": 267
+      "rating": 3.5,
+      "reviewsCount": 1732,
+      "pages": 320,
+      "language": "English"
     },
     {
-      "id": 23,
-      "name": "Science Fundamentals Textbook",
+      "id": 65,
+      "name": "Nairobi Nights",
+      "category": "books",
+      "subcategory": "fiction",
+      "price": 1100,
+      "compareAtPrice": null,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400"
+      ],
+      "description": "A nairobi nights perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [
+        "Popular"
+      ],
+      "rating": 4.4,
+      "reviewsCount": 1117,
+      "pages": 240,
+      "language": "English"
+    },
+    {
+      "id": 66,
+      "name": "The Lost Treasure Adventure",
+      "category": "books",
+      "subcategory": "fiction",
+      "price": 1600,
+      "compareAtPrice": 1920,
+      "inStock": false,
+      "images": [
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400"
+      ],
+      "description": "This is an exceptionally long description that tests how the layout handles very verbose product descriptions. It includes multiple sentences and even some HTML entities like &amp; &lt; &gt; to ensure proper escaping and rendering. The text should wrap nicely across different screen sizes and demonstrate how the UI adapts to content of varying lengths.\n\nAdditional details about quality, materials, and care instructions go here to make this a truly comprehensive test case for description rendering.",
+      "sizes": [],
+      "colors": [],
+      "tags": [
+        "Sale"
+      ],
+      "rating": 4,
+      "reviewsCount": 107,
+      "pages": 200,
+      "language": "English"
+    },
+    {
+      "id": 67,
+      "name": "Beneath the Acacia Tree",
+      "category": "books",
+      "subcategory": "fiction",
+      "price": 1400,
+      "compareAtPrice": 1680,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400"
+      ],
+      "description": "A beneath the acacia tree perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [],
+      "rating": 3.7,
+      "reviewsCount": 1736,
+      "pages": 260,
+      "language": "English"
+    },
+    {
+      "id": 68,
+      "name": "Kenya Mathematics Form 1 Textbook",
       "category": "books",
       "subcategory": "textbooks",
-      "price": 8500,
-      "compareAtPrice": 9500,
+      "price": 7500,
+      "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&auto=format&fit=crop"],
-      "description": "Comprehensive guide covering physics, chemistry, and biology fundamentals. Ideal for high school and college students.",
-      "sizes": null,
-      "colors": null,
-      "tags": ["Educational"],
-      "rating": 4.5,
-      "reviewsCount": 89
+      "images": [
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400"
+      ],
+      "description": "A kenya mathematics form 1 textbook perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [
+        "Popular"
+      ],
+      "rating": 3.5,
+      "reviewsCount": 605,
+      "pages": 400,
+      "language": "English"
     },
     {
-      "id": 24,
-      "name": "History of World Art",
+      "id": 69,
+      "name": "English Grammar in Use - Advanced",
       "category": "books",
       "subcategory": "textbooks",
-      "price": 6500,
-      "compareAtPrice": 7200,
+      "price": 6200,
+      "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=600&auto=format&fit=crop"],
-      "description": "Journey through art history from prehistoric cave paintings to contemporary masterpieces. Richly illustrated throughout.",
-      "sizes": null,
-      "colors": null,
-      "tags": ["Educational", "Illustrated"],
-      "rating": 4.6,
-      "reviewsCount": 156
+      "images": [
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400"
+      ],
+      "description": "A english grammar in use - advanced perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [
+        "New"
+      ],
+      "rating": 2.9,
+      "reviewsCount": 1074,
+      "pages": 350,
+      "language": "English"
     },
     {
-      "id": 25,
-      "name": "Sweet Bedtime Stories",
+      "id": 70,
+      "name": "Kiswahili Kitabu cha Kisomo Darasa la Saba",
+      "category": "books",
+      "subcategory": "textbooks",
+      "price": 5800,
+      "compareAtPrice": 6960,
+      "inStock": false,
+      "images": [
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400"
+      ],
+      "description": "A kiswahili kitabu cha kisomo darasa la saba perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [],
+      "rating": 3.7,
+      "reviewsCount": 1144,
+      "pages": 300,
+      "language": "Swahili"
+    },
+    {
+      "id": 71,
+      "name": "World Geography for Secondary Students",
+      "category": "books",
+      "subcategory": "textbooks",
+      "price": 6800,
+      "compareAtPrice": null,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400"
+      ],
+      "description": "A world geography for secondary students perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [],
+      "rating": 5,
+      "reviewsCount": 1404,
+      "pages": 450,
+      "language": "English"
+    },
+    {
+      "id": 72,
+      "name": "The Friendly Lion Storybook",
       "category": "books",
       "subcategory": "childrens",
-      "price": 1400,
-      "compareAtPrice": 1600,
+      "price": 800,
+      "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=600&auto=format&fit=crop"],
-      "description": "Collection of gentle bedtime stories perfect for young children. Beautifully illustrated and calming to read.",
-      "sizes": null,
-      "colors": null,
-      "tags": ["Bestseller", "New Arrival"],
-      "rating": 4.9,
-      "reviewsCount": 423
+      "images": [
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400"
+      ],
+      "description": "A the friendly lion storybook perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [],
+      "rating": 4.8,
+      "reviewsCount": 1534,
+      "pages": 32,
+      "language": "English"
     },
     {
-      "id": 26,
-      "name": "ABC Learning Adventure",
+      "id": 73,
+      "name": "Colors Everywhere Picture Book",
+      "category": "books",
+      "subcategory": "childrens",
+      "price": 600,
+      "compareAtPrice": 720,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1581557399319-efa07b26a8b7?w=400"
+      ],
+      "description": "A colors everywhere picture book perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [
+        "Sale"
+      ],
+      "rating": 3.1,
+      "reviewsCount": 73,
+      "pages": 24,
+      "language": "English"
+    },
+    {
+      "id": 74,
+      "name": "123 Counting Fun Book",
+      "category": "books",
+      "subcategory": "childrens",
+      "price": 1000,
+      "compareAtPrice": null,
+      "inStock": false,
+      "images": [
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400"
+      ],
+      "description": "A 123 counting fun book perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [
+        "Sale"
+      ],
+      "rating": 2.8,
+      "reviewsCount": 1744,
+      "pages": 40,
+      "language": "English"
+    },
+    {
+      "id": 75,
+      "name": "Bible Stories for Little Ones",
       "category": "books",
       "subcategory": "childrens",
       "price": 900,
-      "compareAtPrice": 1000,
+      "compareAtPrice": 1080,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1587330680653-d4649e9f952b?w=600&auto=format&fit=crop"],
-      "description": "Interactive alphabet book with colorful illustrations and engaging activities for early learners.",
-      "sizes": null,
-      "colors": null,
-      "tags": ["Bestseller"],
-      "rating": 4.8,
-      "reviewsCount": 312
+      "images": [
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400"
+      ],
+      "description": "This is an exceptionally long description that tests how the layout handles very verbose product descriptions. It includes multiple sentences and even some HTML entities like &amp; &lt; &gt; to ensure proper escaping and rendering. The text should wrap nicely across different screen sizes and demonstrate how the UI adapts to content of varying lengths.\n\nAdditional details about quality, materials, and care instructions go here to make this a truly comprehensive test case for description rendering.",
+      "sizes": [],
+      "colors": [],
+      "tags": [
+        "Popular"
+      ],
+      "rating": 0,
+      "reviewsCount": 0,
+      "pages": 48,
+      "language": "English"
     },
     {
-      "id": 27,
-      "name": "My First Coloring Book",
+      "id": 76,
+      "name": "My First Puzzle Activity Book",
       "category": "books",
       "subcategory": "childrens",
-      "price": 700,
+      "price": 1100,
       "compareAtPrice": null,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1594751985671-2f6c5b6b1a7f?w=600&auto=format&fit=crop"],
-      "description": "Large-format coloring book with thick pages and simple designs perfect for young artists.",
-      "sizes": null,
-      "colors": null,
-      "tags": [],
-      "rating": 4.5,
-      "reviewsCount": 189
+      "images": [
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400"
+      ],
+      "description": "A my first puzzle activity book perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [
+        "Sale"
+      ],
+      "rating": 3.7,
+      "reviewsCount": 1958,
+      "pages": 64,
+      "language": "English"
     },
     {
-      "id": 28,
-      "name": "Animal Kingdom Encyclopedia",
+      "id": 77,
+      "name": "Animals of the Savannah Board Book",
       "category": "books",
       "subcategory": "childrens",
-      "price": 2200,
-      "compareAtPrice": 2500,
+      "price": 1300,
+      "compareAtPrice": 1560,
       "inStock": true,
-      "images": ["https://images.unsplash.com/photo-1557253802-66c2761ad6ec?w=600&auto=format&fit=crop"],
-      "description": "Comprehensive guide to animals from around the world. Features stunning photography and fun facts.",
-      "sizes": null,
-      "colors": null,
-      "tags": ["Educational", "Bestseller"],
-      "rating": 4.7,
-      "reviewsCount": 201
+      "images": [
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400",
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400"
+      ],
+      "description": "This is an exceptionally long description that tests how the layout handles very verbose product descriptions. It includes multiple sentences and even some HTML entities like &amp; &lt; &gt; to ensure proper escaping and rendering. The text should wrap nicely across different screen sizes and demonstrate how the UI adapts to content of varying lengths.\n\nAdditional details about quality, materials, and care instructions go here to make this a truly comprehensive test case for description rendering.",
+      "sizes": [],
+      "colors": [],
+      "tags": [],
+      "rating": 4.1,
+      "reviewsCount": 1679,
+      "pages": 20,
+      "language": "English"
+    },
+    {
+      "id": 78,
+      "name": "Daniel and the Lions Bible Story",
+      "category": "books",
+      "subcategory": "childrens",
+      "price": 1200,
+      "compareAtPrice": null,
+      "inStock": false,
+      "images": [
+        "https://images.unsplash.com/photo-1512820790803-83d5b814b5a6?w=400",
+        "https://images.unsplash.com/photo-1507842217343-583f20270319?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400",
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400"
+      ],
+      "description": "A daniel and the lions bible story perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [
+        "Sale"
+      ],
+      "rating": 3.7,
+      "reviewsCount": 845,
+      "pages": 36,
+      "language": "English"
+    },
+    {
+      "id": 79,
+      "name": "The Good Samaritan Tale",
+      "category": "books",
+      "subcategory": "childrens",
+      "price": 1400,
+      "compareAtPrice": null,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1495446815901-a7297e3ffe2d?w=400"
+      ],
+      "description": "A the good samaritan tale perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [],
+      "rating": 3.1,
+      "reviewsCount": 1428,
+      "pages": 32,
+      "language": "English"
+    },
+    {
+      "id": 80,
+      "name": "Creation Story for Children",
+      "category": "books",
+      "subcategory": "childrens",
+      "price": 1500,
+      "compareAtPrice": null,
+      "inStock": true,
+      "images": [
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400"
+      ],
+      "description": "A creation story for children perfect for everyday use.",
+      "sizes": [],
+      "colors": [],
+      "tags": [],
+      "rating": 3.3,
+      "reviewsCount": 758,
+      "pages": 28,
+      "language": "English"
     }
   ]
 }
