@@ -48,10 +48,7 @@ export class ShopPage {
     if (!this.filteredProducts || this.filteredProducts.length === 0) {
       productsGrid.innerHTML = `
         <div class="empty-state" style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
-          <div style="font-size: 4rem; margin-bottom: 1rem;">🛍️</div>
-          <h3>No products found</h3>
-          <p>Try adjusting your search or filter criteria</p>
-          <button class="btn btn-primary" style="margin-top: 1.5rem;" onclick="location.reload()">Clear Filters</button>
+          <h3>No products found. Please try a different filter or check back later.</h3>
         </div>
       `;
       
